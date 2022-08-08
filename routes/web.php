@@ -5,6 +5,7 @@ use App\Models\User;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Backend\AdminProfileController;
+use App\Http\Controllers\Frontend\IndexController;
 
 
 
@@ -20,6 +21,11 @@ use App\Http\Controllers\Backend\AdminProfileController;
 */
 
 /*-------------Admin route--------*/
+
+Route::get('/', function()
+{
+    return view('frontend.index');
+});
 
 Route::prefix('admin')->group(function (){
 
@@ -49,9 +55,8 @@ Route::prefix('admin')->group(function (){
 /*-------------End Admin route--------*/
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
