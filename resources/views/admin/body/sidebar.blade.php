@@ -71,15 +71,15 @@
         </li> 
 		
 		<li class="treeview">
-          <a href="#">
+          <a href="">
             <i data-feather="server"></i>
-			<span>Category</span>
+			<span>All Category</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-right pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="tables_simple.html"><i class="ti-more"></i>Main Category</a></li>
+            <li><a href="{{ route('all.category')}}"><i class="ti-more"></i>Main Category</a></li>
             <li><a href="tables_data.html"><i class="ti-more"></i>Sub Category</a></li>
           </ul>
         </li>
