@@ -197,7 +197,7 @@
 
 						 
 						<div class="text-lg-center">
-<input type="submit" class="btn btn-primary  " value="Add Service">
+ <input type="submit" class="btn btn-primary  " value="Add Service">
 						</div>
 					</form>
 

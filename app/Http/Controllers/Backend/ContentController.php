@@ -16,7 +16,7 @@ class ContentController extends Controller
 
 	}
 
-	public function StoreProduct(Request $request){
+	public function StoreContent(Request $request){
 
 		$request->validate([
 		  'file' => 'required|mimes:jpeg,png,jpg,zip,pdf|max:2048',
