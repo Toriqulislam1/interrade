@@ -64,6 +64,7 @@
           <ul class="treeview-menu">
             <li><a href="profile.html"><i class="ti-more"></i>Main Banner</a></li>
             <li><a href="{{ route('add-content')}}"><i class="ti-more"></i>Add Services</a></li>
+            <li><a href="{{ route('manage-content')}}"><i class="ti-more"></i>Manage Services</a></li>
             <li><a href="gallery.html"><i class="ti-more"></i>Gallery</a></li>
             <li><a href="faq.html"><i class="ti-more"></i>Portfolio</a></li>
             <li><a href="timeline.html"><i class="ti-more"></i>Team</a></li>

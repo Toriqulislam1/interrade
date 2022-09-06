@@ -99,6 +99,8 @@ Route::prefix('content')->group(function(){
 
     Route::post('/store', [ProductController::class, 'StoreContent'])->name('content-store');
 
+    Route::get('/manage', [ProductController::class, 'ManageContent'])->name('manage-content');
+
 });
      
 
