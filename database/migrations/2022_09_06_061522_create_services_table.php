@@ -21,7 +21,6 @@ return new class extends Migration
             $table->string('breadcrumb');
             $table->string('content_title');
             $table->string('content_descrip');
-            $table->string('content_thamb');
             $table->string('long_descrip');
             $table->integer('status')->default(0);
             $table->timestamps();

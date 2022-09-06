@@ -21,9 +21,10 @@
 			  <div class="row">
 				<div class="col">
 
-  <form method="post" action="{{ route('content-store') }}" enctype="multipart/form-data" >
+  <form method="POST" action="{{ route('content-store') }}" enctype="multipart/form-data" >
 		 	@csrf
 
+		
 	<div class="row">
 	 <div class="col-12">	
 
@@ -36,7 +37,7 @@
 				 <div class="form-group">
 	<h5>Category Select <span class="text-danger">*</span></h5>
 	<div class="controls">
-		<select name="category_id" class="form-control" required="" >
+	<select name="category_id" class="form-control" required="" >
 			<option value="" selected="" disabled="">Select Category</option>
 			@foreach($categories as $category)
  <option value="{{ $category->id }}">{{ $category->category_name }}</option>	
@@ -56,7 +57,7 @@
 				 <div class="form-group">
 	<h5>Sub Category Select <span class="text-danger">*</span></h5>
 	<div class="controls">
-		<select name="subcategory_id" class="form-control" required="" >
+	<select name="subcategory_id" class="form-control" required="" >
 			<option value="" selected="" disabled="">Select SubCategory</option>
 			 
 		</select>
@@ -226,7 +227,7 @@
                     	$('select[name="subsubcategory_id"]').html('');
                        var d =$('select[name="subcategory_id"]').empty();
                           $.each(data, function(key, value){
-                              $('select[name="subcategory_id"]').append('<option value="'+ value.id +'">' + value.subcategory_name_en + '</option>');
+                              $('select[name="subcategory_id"]').append('<option value="'+ value.id +'">' + value.subcategory_name + '</option>');
                           });
                     },
                 });
@@ -234,24 +235,7 @@
                 alert('danger');
             }
         });
- $('select[name="subcategory_id"]').on('change', function(){
-            var subcategory_id = $(this).val();
-            if(subcategory_id) {
-                $.ajax({
-                    url: "{{  url('/category/sub-subcategory/ajax') }}/"+subcategory_id,
-                    type:"GET",
-                    dataType:"json",
-                    success:function(data) {
-                       var d =$('select[name="subsubcategory_id"]').empty();
-                          $.each(data, function(key, value){
-                              $('select[name="subsubcategory_id"]').append('<option value="'+ value.id +'">' + value.subsubcategory_name_en + '</option>');
-                          });
-                    },
-                });
-            } else {
-                alert('danger');
-            }
-        });
+ 
  
     });
     </script>

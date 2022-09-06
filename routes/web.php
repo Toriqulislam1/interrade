@@ -84,6 +84,8 @@ Route::post('/sub/store', [SubCategoryController::class, 'SubCategoryStore'])->n
 
 Route::get('/sub/edit/{id}', [SubCategoryController::class, 'SubCategoryEdit'])->name('subcategory.edit');
 
+Route::get('/subcategory/ajax/{category_id}', [SubCategoryController::class, 'GetSubCategory']);
+
 Route::post('/sub/update', [SubCategoryController::class, 'SubCategoryUpdate'])->name('subcategory.update');
 
 Route::get('/sub/delete/{id}', [SubCategoryController::class, 'SubCategoryDelete'])->name('subcategory.delete');
@@ -91,15 +93,15 @@ Route::get('/sub/delete/{id}', [SubCategoryController::class, 'SubCategoryDelete
 
     });
 
-// Admin Products All Routes 
+// Admin Content All Routes 
 
 Route::prefix('content')->group(function(){
 
     Route::get('/add', [ContentController::class, 'AddContent'])->name('add-content');
 
-    Route::post('/store', [ProductController::class, 'StoreContent'])->name('content-store');
+    Route::post('/store', [ContentController::class, 'StoreContent'])->name('content-store');
 
-    Route::get('/manage', [ProductController::class, 'ManageContent'])->name('manage-content');
+    Route::get('/manage', [ContentController::class, 'ManageContent'])->name('manage-content');
 
 });
      
