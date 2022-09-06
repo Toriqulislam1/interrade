@@ -2,7 +2,7 @@
 @section('admin')
 
  <!-- Content Wrapper. Contains page content -->
- <div class="content-wrapper">
+ 
 	  <div class="container-full">
 		<!-- Content Header (Page header) -->
 		<div class="content-header">
@@ -46,10 +46,10 @@
 		
 		<td>{{ $item->category_name }}</td>
 		
-		<td>
- <a href="{{ route('category.edit',$item->id) }}" class="btn btn-info" title="Edit Data"><i class="fa fa-pencil"></i> </a>
- <a href="{{ route('category.delete',$item->id) }}" class="btn btn-danger" title="Delete Data" id="delete">
- 	<i class="fa fa-trash"></i></a>
+					<td>
+			<a href="{{ route('category.edit',$item->id) }}" class="btn btn-info" title="Edit Data"><i class="fa fa-pencil"></i> </a>
+			<a href="{{ route('category.delete',$item->id) }}" class="btn btn-danger" title="Delete Data" id="delete">
+				<i class="fa fa-trash"></i></a>
 		</td>
 							 
 	 </tr>
@@ -65,12 +65,12 @@
             <!--   ------------ Add Category Page -------- -->
 
 
-          <div class="col-4">
+    <div class="col-4">
 
-<div class="box">
-   <div class="box-header with-border">
-     <h3 class="box-title">Add Category </h3>
-   </div>
+		<div class="box">
+			<div class="box-header with-border">
+		<h3 class="box-title">Add Category </h3>
+	</div>
    <!-- /.box-header -->
    <div class="box-body">
        <div class="table-responsive">
@@ -114,7 +114,7 @@
 		<!-- /.content -->
 	  
 	  </div>
-  </div>
+
   <!-- /.content-wrapper -->
   
 

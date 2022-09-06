@@ -24,10 +24,15 @@
 
 <body class="hold-transition dark-skin sidebar-mini theme-primary fixed">
 
+<div class="wrapper">
+
 @include('admin.body.header')
   
   <!-- Left side column. contains the logo and sidebar -->
   @include('admin.body.sidebar')
+
+   <!-- Content Wrapper. Contains page content -->
+   <div class="content-wrapper">
 
   @yield('admin')
 	

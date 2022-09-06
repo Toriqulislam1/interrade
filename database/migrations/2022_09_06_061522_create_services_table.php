@@ -13,13 +13,16 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('contents', function (Blueprint $table) {
+        Schema::create('services', function (Blueprint $table) {
             $table->id();
             $table->integer('category_id');
             $table->integer('subcategory_id');
+            $table->string('content_slide_title');
+            $table->string('breadcrumb');
             $table->string('content_title');
-            $table->string('content_thambnail');
-            $table->string('long_desc');
+            $table->string('content_descrip');
+            $table->string('content_thamb');
+            $table->string('long_descrip');
             $table->integer('status')->default(0);
             $table->timestamps();
         });
@@ -32,6 +35,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('contents');
+        Schema::dropIfExists('services');
     }
 };

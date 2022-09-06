@@ -2,7 +2,7 @@
 <header class="nav-bg-w main-header navfix fixed-top menu-white">
          <div class="container-fluid m-pad">
 				<div class="menu-header">
-				   <div class="dsk-logo"><a class="nav-brand" href="index.html">
+				   <div class="dsk-logo"><a class="nav-brand" href="/">
 					  <img src="images/white-logo.png" alt="Logo" class="mega-white-logo"/>
 					  <img src="frontend/assets/images/logo.png" alt="Logo" class="mega-darks-logo"/>
 					  </a>
@@ -10,17 +10,17 @@
 				   <div class="custom-nav" role="navigation">
 					  <ul class="nav-list">
 						 <li class="sbmenu">
-							<a href="index.html" class="menu-links">HOME</a>
+							<a href="/" class="menu-links">HOME</a>
 							<div class="nx-dropdown">
 							   
 						 </li>
 						 <li class="sbmenu">
-							<a href="#." class="menu-links">ABOUT</a>
+							<a href="#about" class="menu-links">ABOUT</a>
 							<div class="nx-dropdown">
 							   
 						 </li>
 						 <li class="sbmenu">
-							<a href="#" class="menu-links">SERVICES</a>
+							<a href="#services" class="menu-links">SERVICES</a>
 							<div class="nx-dropdown">
 							   <div class="sub-menu-section">
 								  <div class="container">
@@ -75,15 +75,15 @@
 						
 						 </li>
 						 <li class="sbmenu rpdropdown">
-							<a href="#" class="menu-links">PORTFOLIO</a>
+							<a href="#work" class="menu-links">PORTFOLIO</a>
 							
 						 </li>
 						 <li class="sbmenu rpdropdown">
-							<a href="#" class="menu-links">CLIENTS</a>
+							<a href="#clients" class="menu-links">CLIENTS</a>
 							
 						 </li>
 						 <li class="sbmenu rpdropdown">
-							<a href="#" class="menu-links">BLOG</a>
+							<a href="#blog" class="menu-links">BLOG</a>
 							<div class="nx-dropdown menu-dorpdown">
 							   
 							</div>

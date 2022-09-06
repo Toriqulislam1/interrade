@@ -2,7 +2,7 @@
 @section('admin')
 
  <!-- Content Wrapper. Contains page content -->
- <div class="content-wrapper">
+
 	  <div class="container-full">
 		<!-- Content Header (Page header) -->
 		<div class="content-header">
@@ -27,7 +27,7 @@
             <!--   ------------ Add Category Page -------- -->
 
 
-          <div class="col-8">
+          <div class="col-12">
 
 <div class="box">
    <div class="box-header with-border">
@@ -76,7 +76,7 @@
 		<!-- /.content -->
 	  
 	  </div>
-  </div>
+
   <!-- /.content-wrapper -->
   
 

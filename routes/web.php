@@ -97,6 +97,8 @@ Route::prefix('content')->group(function(){
 
     Route::get('/add', [ContentController::class, 'AddContent'])->name('add-content');
 
+    Route::post('/store', [ProductController::class, 'StoreContent'])->name('content-store');
+
 });
      
 

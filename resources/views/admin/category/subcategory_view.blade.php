@@ -2,7 +2,7 @@
 @section('admin')
 
  <!-- Content Wrapper. Contains page content -->
- <div class="content-wrapper">
+
 	  <div class="container-full">
 		<!-- Content Header (Page header) -->
 		<div class="content-header">
@@ -94,7 +94,7 @@
 
 
             <div class="form-group">
-            <h5>Input Category Name  <span class="text-danger">*</span></h5>
+            <h5>Input Sub Category Name  <span class="text-danger">*</span></h5>
             <div class="controls">
             <input type="text"  name="subcategory_name" class="form-control" > 
             @error('subcategory_name') 
@@ -127,7 +127,7 @@
 		<!-- /.content -->
 	  
 	  </div>
-  </div>
+ 
   <!-- /.content-wrapper -->
   
 
