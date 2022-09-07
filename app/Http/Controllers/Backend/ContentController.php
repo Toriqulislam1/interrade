@@ -6,22 +6,21 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\SubCategory;
+use App\Models\Services;
+use Carbon\Carbon;
+use Image;
 
 class ContentController extends Controller
 {
     public function AddContent(){
 		$categories = Category::latest()->get();
-		$subcategories = SubCategory::latest()->get();
-		return view('admin.content.add_content',compact('categories','subcategories'));
+		return view('admin.content.add_content',compact('categories'));
 
 	}
 
 	public function StoreContent(Request $request){
 
-		$request->validate([
-		  'file' => 'required|mimes:jpeg,png,jpg,zip,pdf|max:2048',
-		]);
-	
+		
 		
 
 		$image = $request->file('breadcrumb');
@@ -32,7 +31,7 @@ class ContentController extends Controller
 		
 
 
-		$product_id = Product::insertGetId([
+		Services::insert([
 			'category_id' => $request->category_id,
 			'subcategory_id' => $request->subcategory_id,
 			'content_slide_title' => $request->content_slide_title,
@@ -52,15 +51,11 @@ class ContentController extends Controller
 			'alert-type' => 'success'
 		);
 
-		return redirect()->route('manage-content')->with($notification);
+		return redirect()->back()->with($notification);
 
 	} ///end method
 
-	public function ManageContent(){
-
-		$services = Services::latest()->get();
-		return view('admin.content.add_content',compact('services'));
-	}
+	
 
 	
 

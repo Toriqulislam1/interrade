@@ -81,8 +81,8 @@
 				 <div class="form-group">
 			<h5>Breadcrumb Header <span class="text-danger">*</span></h5>
 			<div class="controls">
-				<input type="text" name="product_name_en" class="form-control" required="">
-     @error('product_name_en') 
+				<input type="text" name="content_slide_title" class="form-control" required="">
+     @error('content_slide_title') 
 	 <span class="text-danger">{{ $message }}</span>
 	 @enderror
 	 	  </div>
@@ -96,8 +96,8 @@
 <div class="form-group">
 	<h5>Breadcrumb Banner <span class="text-danger">*</span></h5>
 	<div class="controls">
-<input type="file" name="product_thambnail" class="form-control" onChange="mainThamUrl(this)" required="" >
-@error('product_thambnail') 
+<input type="file" name="breadcrumb" class="form-control" onChange="mainThamUrl(this)" required="" >
+@error('breadcrumb') 
 <span class="text-danger">{{ $message }}</span>
 @enderror
 <img src="" id="mainThmb">
@@ -116,42 +116,28 @@
 	
 		
 		
-		<div class="col-md-4">
+		<div class="col-md-6">
 
 				<div class="form-group">
 				<h5>Service Title <span class="text-danger">*</span></h5>
 				<div class="controls">
-				<input type="text" name="product_name_en" class="form-control" required="">
-				@error('product_name_en') 
+				<input type="text" name="content_title" class="form-control" required="">
+				@error('content_title') 
 				<span class="text-danger">{{ $message }}</span>
 				@enderror
 				</div>
 				</div>
 
-		</div> <!-- end col md 4 -->
+		</div> <!-- end col md 6 -->
 		
-		<div class="col-md-4">
-
-				<div class="form-group">
-					<h5>Service Banner <span class="text-danger">*</span></h5>
-					<div class="controls">
-				<input type="file" name="product_thambnail" class="form-control" onChange="mainThamUrl(this)" required="" >
-				@error('product_thambnail') 
-				<span class="text-danger">{{ $message }}</span>
-				@enderror
-				<img src="" id="mainThmb">
-					</div>
-				</div>
-		 
+	
 		
-	</div> <!-- end col md 4 -->
-		
-	<div class="col-md-4">
+	<div class="col-md-6">
 
 			<div class="form-group">
 				<h5>Short Description  <span class="text-danger">*</span></h5>
 				<div class="controls">
-			<textarea name="short_descp_en" id="textarea" class="form-control" required placeholder="Textarea text"></textarea>     
+			<textarea name="content_descrip" id="textarea" class="form-control" required placeholder="Textarea text"></textarea>     
 				</div>
 			</div>
 					
@@ -172,7 +158,7 @@
 	     <div class="form-group">
 			<h5>Long Description <span class="text-danger">*</span></h5>
 			<div class="controls">
-	<textarea id="editor2" name="long_descp_hin" rows="10" cols="80">
+	<textarea id="editor2" name="long_descrip" rows="10" cols="80">
 		Long Description 
 						</textarea>       
 	 		 </div>
@@ -183,19 +169,10 @@
 			
 		</div> <!-- end 3rd row  -->
 
-	 
 	 <hr>
  
-
-
 	<div class="row">
-
-
-
-
-
-
-						 
+ 
 						<div class="text-lg-center">
  <input type="submit" class="btn btn-primary  " value="Add Service">
 						</div>
