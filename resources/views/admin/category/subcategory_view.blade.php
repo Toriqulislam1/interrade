@@ -63,7 +63,7 @@
             <!--   ------------ Add Category Page -------- -->
 
 
-          <div class="col-4">
+<div class="col-4">
 
 <div class="box">
    <div class="box-header with-border">

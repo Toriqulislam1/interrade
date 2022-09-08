@@ -28,7 +28,12 @@ class ContentController extends Controller
     	Image::make($image)->resize(917,1000)->save('upload/services/'.$name_gen);
     	$save_url = 'upload/services/'.$name_gen;
 
-		
+		if($request->hasFile("thamble")){
+            $file=$request->file("thamble");
+            $imageName=time().'_'.$file->getClientOriginalName();
+            $file->move(\public_path("upload/services/"),$imageName);
+
+		}
 
 
 		Services::insert([
@@ -39,6 +44,7 @@ class ContentController extends Controller
 			'content_descrip' => $request->content_descrip,
 			'long_descrip' => $request->long_descrip,
 			'breadcrumb' => $save_url,
+			'thamble' => $save_url,
 			'status' => 1,
       		'created_at' => Carbon::now(),   
 
@@ -51,9 +57,66 @@ class ContentController extends Controller
 			'alert-type' => 'success'
 		);
 
-		return redirect()->back()->with($notification);
+		return redirect()->route('manage-content')->with($notification);
 
 	} ///end method
+
+	public function ManageContent(){
+
+		$services = Services::latest()->get();
+		return view('admin.content.content_view',compact('services'));
+	}
+
+
+	public function EditContent($id){
+
+		
+		$categories = Category::latest()->get();
+		$subcategory = SubCategory::latest()->get();
+		$services = Services::findOrFail($id);
+		return view('admin.content.content_edit',compact('categories','subcategory','services'));
+
+	} //end
+
+	public function UpdateContent(Request $request){
+
+		$services_id = $request->id;
+
+		
+
+		if($request->hasFile("thamble")){
+            $file=$request->file("thamble");
+            $imageName=time().'_'.$file->getClientOriginalName();
+            $file->move(\public_path("upload/services/"),$imageName);
+
+		}
+
+
+		Services::findOrFail($services_id)->update([
+			'category_id' => $request->category_id,
+			'subcategory_id' => $request->subcategory_id,
+			'content_slide_title' => $request->content_slide_title,
+			'content_title' => $request->content_title,
+			'content_descrip' => $request->content_descrip,
+			'long_descrip' => $request->long_descrip,
+			'breadcrumb' => $save_url,
+			'thamble' => $save_url,
+			'status' => 1,
+      		'created_at' => Carbon::now(),   
+
+
+		]);
+
+
+		$notification = array(
+			'message' => 'Service Update Successfully',
+			'alert-type' => 'success'
+		);
+
+		return redirect()->route('manage-content')->with($notification);
+
+	} ///end method
+
 
 	
 

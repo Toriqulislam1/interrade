@@ -13,7 +13,7 @@
 		 <!-- Basic Forms -->
 		  <div class="box">
 			<div class="box-header with-border">
-			  <h4 class="box-title">Add Services </h4>
+			  <h4 class="box-title">Update Services </h4>
 			   
 			</div>
 			<!-- /.box-header -->
@@ -21,7 +21,7 @@
 			  <div class="row">
 				<div class="col">
 
-  <form method="POST" action="{{ route('content-store') }}" enctype="multipart/form-data" >
+  <form method="POST" action="{{ route('content-update') }}" enctype="multipart/form-data" >
 		 	@csrf
 
 		

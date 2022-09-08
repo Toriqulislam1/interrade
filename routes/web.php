@@ -103,6 +103,10 @@ Route::prefix('content')->group(function(){
 
     Route::get('/manage', [ContentController::class, 'ManageContent'])->name('manage-content');
 
+    Route::get('/edit/{id}', [ContentController::class, 'EditContent'])->name('content.edit');
+
+    Route::get('/update', [ContentController::class, 'UpdateContent'])->name('content-update');
+
 });
      
 

@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('content_title');
             $table->string('content_descrip');
             $table->string('long_descrip');
+            $table->string('thamble');
             $table->integer('status')->default(0);
             $table->timestamps();
         });
