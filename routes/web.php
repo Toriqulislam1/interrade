@@ -105,7 +105,7 @@ Route::prefix('content')->group(function(){
 
     Route::get('/edit/{id}', [ContentController::class, 'EditContent'])->name('content.edit');
 
-    Route::get('/update', [ContentController::class, 'UpdateContent'])->name('content-update');
+    Route::post('/update', [ContentController::class, 'UpdateContent'])->name('content-update');
 
 });
      

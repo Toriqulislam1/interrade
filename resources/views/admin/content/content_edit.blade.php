@@ -40,7 +40,7 @@
 	<select name="category_id" class="form-control" required="" >
 			<option value="" selected="" disabled="">Select Category</option>
 			@foreach($categories as $category)
- <option value="{{ $category->id }}">{{ $category->category_name }}</option>	
+ <option value="{{ $category->id }}" {{ $category->id == $services->category_id ? 'selected': '' }} >{{ $category->category_name }}</option>	
 			@endforeach
 		</select>
 		@error('category_id') 
@@ -58,7 +58,11 @@
 	<h5>Sub Category Select <span class="text-danger">*</span></h5>
 	<div class="controls">
 	<select name="subcategory_id" class="form-control" required="" >
-			<option value="" selected="" disabled="">Select SubCategory</option>
+			
+	@foreach($subcategory as $sub)
+ <option value="{{ $sub->id }}" {{ $sub->id == $services->subcategory_id ? 'selected': '' }} >{{ $sub->subcategory_name }}</option>	
+			@endforeach
+
 			 
 		</select>
 		@error('subcategory_id') 
@@ -81,7 +85,7 @@
 				 <div class="form-group">
 			<h5>Breadcrumb Header <span class="text-danger">*</span></h5>
 			<div class="controls">
-				<input type="text" name="content_slide_title" class="form-control" required="">
+				<input type="text" name="content_slide_title" class="form-control" required="" value="{{ $services->content_slide_title }}">
      @error('content_slide_title') 
 	 <span class="text-danger">{{ $message }}</span>
 	 @enderror
@@ -121,7 +125,7 @@
 				<div class="form-group">
 				<h5>Service Title <span class="text-danger">*</span></h5>
 				<div class="controls">
-				<input type="text" name="content_title" class="form-control" required="">
+				<input type="text" name="content_title" class="form-control" required="" value="{{ $services->content_title}}">
 				@error('content_title') 
 				<span class="text-danger">{{ $message }}</span>
 				@enderror
@@ -137,7 +141,9 @@
 			<div class="form-group">
 				<h5>Short Description  <span class="text-danger">*</span></h5>
 				<div class="controls">
-			<textarea name="content_descrip" id="textarea" class="form-control" required placeholder="Textarea text"></textarea>     
+			<textarea name="content_descrip" id="textarea" class="form-control" required placeholder="Textarea text">
+			{!! $services->content_descrip !!}
+			</textarea>     
 				</div>
 			</div>
 					
@@ -176,7 +182,7 @@
 			<h5>Long Description <span class="text-danger">*</span></h5>
 			<div class="controls">
 	<textarea id="editor2" name="long_descrip" rows="10" cols="80">
-		Long Description 
+	{!! $services->long_descrip !!}
 						</textarea>       
 	 		 </div>
 		</div>
@@ -191,7 +197,7 @@
 	<div class="row">
  
 						<div class="text-lg-center">
- <input type="submit" class="btn btn-primary  " value="Add Service">
+ <input type="submit" class="btn btn-primary  " value="Update Service">
 						</div>
 					</form>
 
