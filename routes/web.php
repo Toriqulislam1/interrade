@@ -105,7 +105,15 @@ Route::prefix('content')->group(function(){
 
     Route::get('/edit/{id}', [ContentController::class, 'EditContent'])->name('content.edit');
 
-    Route::post('/update', [ContentController::class, 'UpdateContent'])->name('content-update');
+    Route::post('/data/update', [ContentController::class, 'ContentDataUpdate'])->name('content-update');
+
+    Route::post('/thamble/update', [ContentController::class, 'ThambleImageUpdate'])->name('update-services-thamble');
+
+    Route::get('/inactive/{id}', [ContentController::class, 'ServicesInactive'])->name('services.inactive');
+
+    Route::get('/active/{id}', [ContentController::class, 'ServicesActive'])->name('services.active');
+
+    Route::get('/delete/{id}', [ContentController::class, 'ServicesDelete'])->name('services.delete');
 
 });
      

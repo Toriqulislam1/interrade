@@ -32,6 +32,7 @@ class ContentController extends Controller
             $file=$request->file("thamble");
             $imageName=time().'_'.$file->getClientOriginalName();
             $file->move(\public_path("upload/services/"),$imageName);
+			$save = 'upload/services/'.$imageName;
 
 		}
 
@@ -44,7 +45,7 @@ class ContentController extends Controller
 			'content_descrip' => $request->content_descrip,
 			'long_descrip' => $request->long_descrip,
 			'breadcrumb' => $save_url,
-			'thamble' => $save_url,
+			'thamble' => $save,
 			'status' => 1,
       		'created_at' => Carbon::now(),   
 
@@ -78,17 +79,20 @@ class ContentController extends Controller
 
 	} //end
 
-	public function UpdateContent(Request $request){
+	public function ContentDataUpdate(Request $request){
 
 		$services_id = $request->id;
 
 		
 
-		if($request->hasFile("thamble")){
-            $file=$request->file("thamble");
-            $imageName=time().'_'.$file->getClientOriginalName();
-            $file->move(\public_path("upload/services/"),$imageName);
-
+		if($request->hasFile("breadcrumb")){
+			if (File::exists("upload/services/".$post->breadcrumb)) {
+				File::delete("upload/services/".$post->breadcrumb);
+			}
+			$file=$request->file("breadcrumb");
+			$services_id->breadcrumb=time()."_".$file->getClientOriginalName();
+			$file->move(\public_path("upload/services/"),$services_id->breadcrumb);
+			$request['breadcrumb']=$services_id->breadcrumb;
 		}
 
 
@@ -100,7 +104,6 @@ class ContentController extends Controller
 			'content_descrip' => $request->content_descrip,
 			'long_descrip' => $request->long_descrip,
 			'breadcrumb' => $save_url,
-			'thamble' => $save_url,
 			'status' => 1,
       		'created_at' => Carbon::now(),   
 
@@ -117,8 +120,67 @@ class ContentController extends Controller
 
 	} ///end method
 
+	/// Service  Breadcrumb Update /// 
+	public function ThambleImageUpdate(Request $request){
+		$pro_id = $request->id;
+		$oldImage = $request->old_img;
+		unlink($oldImage);
+   
+	   $image = $request->file('thamble');
+		   $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
+		   Image::make($image)->resize(917,1000)->save('upload/services/'.$name_gen);
+		   $save_url = 'upload/services/'.$name_gen;
+   
+		   Services::findOrFail($pro_id)->update([
+			   'thamble' => $save_url,
+			   'updated_at' => Carbon::now(),
+   
+		   ]);
+   
+		   $notification = array(
+			'message' => 'Services Image Thumble Updated Successfully',
+			'alert-type' => 'info'
+		);
 
-	
+		return redirect()->back()->with($notification);
+
+     } // end method
+
+	 public function ServicesInactive($id){
+		Services::findOrFail($id)->update(['status' => 0]);
+		$notification = array(
+		   'message' => 'Services Inactive',
+		   'alert-type' => 'success'
+	   );
+
+	   return redirect()->back()->with($notification);
+	}
+	public function ServicesActive($id){
+		Services::findOrFail($id)->update(['status' => 1]);
+		   $notification = array(
+			  'message' => 'Services Active',
+			  'alert-type' => 'success'
+		  );
+  
+		  return redirect()->back()->with($notification);
+		   
+	   } //end
+
+	   public function ServicesDelete($id){
+		$services = Services::findOrFail($id);
+		unlink($services->breadcrumb);
+		Services::findOrFail($id)->delete();
+
+		
+
+		$notification = array(
+		   'message' => 'Service Deleted Successfully',
+		   'alert-type' => 'success'
+	   );
+
+	   return redirect()->back()->with($notification);
+
+	}// end method 
 
 	
 

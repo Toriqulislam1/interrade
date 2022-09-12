@@ -21,8 +21,10 @@
 			  <div class="row">
 				<div class="col">
 
-  <form method="POST" action="{{ route('content-update') }}" enctype="multipart/form-data" >
+  <form method="POST" action="{{ route('content-update') }}"  enctype="multipart/form-data">
 		 	@csrf
+
+			 <input type="hidden" name="id" value="{{ $services->id }}">
 
 		
 	<div class="row">
@@ -100,11 +102,11 @@
 <div class="form-group">
 	<h5>Breadcrumb Banner <span class="text-danger">*</span></h5>
 	<div class="controls">
-<input type="file" name="breadcrumb" class="form-control" onChange="mainThamUrl(this)" required="" >
+<input type="file" name="breadcrumb" class="form-control"   >
 @error('breadcrumb') 
 <span class="text-danger">{{ $message }}</span>
 @enderror
-<img src="" id="mainThmb">
+<img src="">
 	  </div>
 </div>
 		 
@@ -120,7 +122,7 @@
 	
 		
 		
-		<div class="col-md-4">
+		<div class="col-md-6">
 
 				<div class="form-group">
 				<h5>Service Title <span class="text-danger">*</span></h5>
@@ -136,7 +138,7 @@
 		
 	
 		
-	<div class="col-md-4">
+	<div class="col-md-6">
 
 			<div class="form-group">
 				<h5>Short Description  <span class="text-danger">*</span></h5>
@@ -147,24 +149,10 @@
 				</div>
 			</div>
 					
-	</div> <!-- end col md 4 --> 
+	</div> <!-- end col md 6 --> 
 
 
-	<div class="col-md-4">
-
-<div class="form-group">
-	<h5>Breadcrumb Banner <span class="text-danger">*</span></h5>
-	<div class="controls">
-<input type="file" name="thamble" class="form-control"  required="" >
-@error('thamble') 
-<span class="text-danger">{{ $message }}</span>
-@enderror
-<img src="" >
-	  </div>
-</div>
-		 
-		
-	</div> <!-- end col md 6 -->
+	
 			
 		</div> <!-- end 3rd row  -->
 
@@ -212,6 +200,72 @@
 
 		</section>
 		<!-- /.content -->
+
+
+		<!-- ///////////////// Start Thambnail Image Update Area ///////// -->
+
+ <section class="content">
+ 	<div class="row">
+
+<div class="col-md-12">
+				<div class="box bt-3 border-info">
+				  <div class="box-header">
+		 <h4 class="box-title">Service Thumbnail Image <strong>Update</strong></h4>
+				  </div>
+
+			
+		<form method="post" action="{{ route('update-services-thamble') }}" enctype="multipart/form-data">
+        @csrf
+
+     <input type="hidden" name="id" value="{{ $services->id }}">
+    <input type="hidden" name="old_img" value="{{ $services->thamble }}">
+
+			<div class="row row-sm">
+				 
+				<div class="col-md-3">
+
+<div class="card">
+  <img src="{{ asset($services->thamble) }}" class="card-img-top" style="height: 130px; width: 280px;">
+  <div class="card-body">
+     
+    <p class="card-text"> 
+    	<div class="form-group">
+    		<label class="form-control-label">Change Image <span class="tx-danger">*</span></label>
+    <input type="file" name="thamble" class="form-control" onChange="mainThamUrl(this)"  >
+     <img src="" id="mainThmb">
+    	</div> 
+    </p>
+   
+  </div>
+</div> 		
+				
+				</div><!--  end col md 3		 -->	
+				 
+
+			</div>			
+
+			<div class="text-xs-right">
+<input type="submit" class="btn btn-rounded btn-primary mb-5" value="Update Image">
+		 </div>
+<br><br>
+
+
+
+		</form>		   
+
+
+
+
+
+				</div>
+			  </div>
+ 
+
+ 		
+ 	</div> <!-- // end row  -->
+ 	
+ </section>
+<!-- ///////////////// End Start Thambnail Image Update Area ///////// -->
 	  </div>
  
  <script type="text/javascript">

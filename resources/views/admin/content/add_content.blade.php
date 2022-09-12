@@ -147,7 +147,7 @@
 	<div class="col-md-4">
 
 <div class="form-group">
-	<h5>Breadcrumb Banner <span class="text-danger">*</span></h5>
+	<h5>Service Thumbnail Image <span class="text-danger">*</span></h5>
 	<div class="controls">
 <input type="file" name="thamble" class="form-control"  required="" >
 @error('thamble') 

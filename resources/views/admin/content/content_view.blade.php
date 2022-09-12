@@ -52,17 +52,16 @@
 
 
 		<td width="30%">
- <a href="" class="btn btn-primary" title="Product Details Data"><i class="fa fa-eye"></i> </a>
-
+ 
  <a href="{{ route('content.edit',$item->id) }}" class="btn btn-info" title="Edit Data"><i class="fa fa-pencil"></i> </a>
 
- <a href="" class="btn btn-danger" title="Delete Data" id="delete">
+ <a href="{{ route('services.delete',$item->id) }}" class="btn btn-danger" title="Delete Data" id="delete">
  	<i class="fa fa-trash"></i></a>
 
 @if($item->status == 1)
- <a href="" class="btn btn-danger" title="Inactive Now"><i class="fa fa-arrow-down"></i> </a>
+ <a href="{{ route('services.inactive',$item->id) }}" class="btn btn-danger" title="Inactive Now"><i class="fa fa-arrow-down"></i> </a>
 	 @else
- <a href="" class="btn btn-success" title="Active Now"><i class="fa fa-arrow-up"></i> </a>
+ <a href="{{ route('services.active',$item->id) }}" class="btn btn-success" title="Active Now"><i class="fa fa-arrow-up"></i> </a>
 	 @endif
 
 
