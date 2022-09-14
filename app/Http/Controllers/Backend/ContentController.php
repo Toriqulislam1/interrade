@@ -82,17 +82,13 @@ class ContentController extends Controller
 	public function ContentDataUpdate(Request $request){
 
 		$services_id = $request->id;
-
-		
-
-		if ($image = $request->file('breadcrumb')) {
-            $destinationPath = 'upload/services/';
-            $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
-            $image->move($destinationPath, $profileImage);
-            $input['breadcrumb'] = "$profileImage";
-        }else{
-            unset($input['breadcrumb']);
-        }
+		$oldImage = $request->old_img;
+		unlink($oldImage);
+   
+	   $image = $request->file('breadcrumb');
+		   $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
+		   Image::make($image)->resize(917,1000)->save('upload/services/'.$name_gen);
+		   $save_url = 'upload/services/'.$name_gen;
 
 		Services::findOrFail($services_id)->update([
 			'category_id' => $request->category_id,
@@ -101,7 +97,8 @@ class ContentController extends Controller
 			'content_title' => $request->content_title,
 			'content_descrip' => $request->content_descrip,
 			'long_descrip' => $request->long_descrip,
-			
+			'long_descrip' => $request->long_descrip,
+			'breadcrumb' => $save_url,
 			'status' => 1,
       		'created_at' => Carbon::now(),   
 

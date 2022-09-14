@@ -9,7 +9,7 @@
 
 		<!-- Main content -->
 		<section class="content">
-
+     <div class="row">
 		 <!-- Basic Forms -->
 		  <div class="box">
 			<div class="box-header with-border">
@@ -62,7 +62,7 @@
 			<!-- /.box-body -->
 		  </div>
 		  <!-- /.box -->
-
+</div>
 		</section>
 		<!-- /.content -->
 	  </div>

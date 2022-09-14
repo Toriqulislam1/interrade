@@ -25,6 +25,7 @@
 		 	@csrf
 
 			 <input type="hidden" name="id" value="{{ $services->id }}">
+			<input type="hidden" name="old_img" value="{{ $services->breadcrumb }}">
 
 		
 	<div class="row">

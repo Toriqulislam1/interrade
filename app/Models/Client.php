@@ -9,5 +9,9 @@ class Client extends Model
 {
     use HasFactory;
 
-    protected $guarded = [];
+    protected $fillable = [
+        'client_title',
+        'client_logo',
+        
+    ];
 }

@@ -28,76 +28,27 @@
 
 			
 
-			<div class="col-8">
+             <div class="col-12">
 
 			 <div class="box">
 				<div class="box-header with-border">
-				  <h3 class="box-title">Client List</h3>
-				</div>
-				<!-- /.box-header -->
-				<div class="box-body">
-					<div class="table-responsive">
-					  <table id="example1" class="table table-bordered table-striped">
-						<thead>
-							<tr>
-								
-								<th>Client Logo </th>
-								<th>Compant Name</th>
-                                
-								<th>Action</th>
-								
-							</tr>
-						</thead>
-						<tbody>
-                           @foreach($clients as $item) 
-							<tr>
-							
-								<td><img src="{{ asset($item->client_logo ) }}" style="width: 60px; height: 50px;"></td>
-								<td>{{ $item->client_title }}</td>
-								
-                                
-								
-								<td width="30%">
-                                    <a href="{{ route('client.edit',$item->id) }}" class="btn btn-info" title="Edit"><i class="fa fa-pencil"></i></a>
-                                    <a href="{{ route('client.delete',$item->id) }}" class="btn btn-danger" id="delete" title="delete"><i class="fa fa-trash"></i></a>
-                                   
-                                    
-                                </td>
-								
-							</tr>
-                           @endforeach
-							
-						</tbody>				  
-						
-					</table>
-					</div>              
-				</div>
-				<!-- /.box-body -->
-			  </div>
-			  <!-- /.box -->          
-			</div>
-			<!-- /.col -->
-
-             <!-- all brand page -->
-
-             <div class="col-4">
-
-			 <div class="box">
-				<div class="box-header with-border">
-				  <h3 class="box-title">Add Client </h3>
+				  <h3 class="box-title">Update Client </h3>
 				</div>
 				<!-- /.box-header -->
 				<div class="box-body">
 					<div class="table-responsive">
 					  
 
-            <form method="POST" action="{{ route('client-store') }}"  enctype="multipart/form-data" >
+            <form method="POST" action="{{ route('client-update') }}"  enctype="multipart/form-data" >
                 @csrf
+
+                <input type="hidden" name="id" value="{{ $clients->id }}">
+				<input type="hidden" name="old_img" value="{{ $clients->client_logo }}">
                 	
 	<div class="form-group">
 					<h5>Company Name <span class="text-danger">*</span></h5>
 					<div class="controls">
-					<input type="text" name="client_title" class="form-control" required="">
+					<input type="text" name="client_title" class="form-control" required="" value="{{ $clients->client_title}}">
 					@error('client_title') 
 					<span class="text-danger">{{ $message }}</span>
 					@enderror
@@ -110,7 +61,7 @@
 	<h5>Client Logo <span class="text-danger">*</span></h5>
 	<div class="controls">
     <input type="file" name="client_logo" class="form-control" onChange="mainThamUrl(this)" required="" >
-    @error('port_image') 
+    @error('client_logo') 
     <span class="text-danger">{{ $message }}</span>
     @enderror
     <img src="" id="mainThmb">
@@ -119,7 +70,7 @@
             
                            
     <div class="text-xs-right">
-    <input type="submit" class="btn btn-rounded btn-primary mb-5" value="Add Client">
+    <input type="submit" class="btn btn-rounded btn-primary mb-5" value="Update Client">
     </div>
                    
                 

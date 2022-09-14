@@ -172,21 +172,15 @@ Route::prefix('client')->group(function(){
 
     Route::get('/add', [ClientController::class, 'Addclient'])->name('add-client');
 
-    Route::post('/store', [ContentController::class, 'StoreContent'])->name('content-store');
+    Route::post('/store', [ClientController::class, 'StoreClient'])->name('client-store');
 
-    Route::get('/manage', [ContentController::class, 'ManageContent'])->name('manage-content');
+    Route::get('/manage', [ClientController::class, 'ManageClient'])->name('manage-client');
 
-    Route::get('/edit/{id}', [ContentController::class, 'EditContent'])->name('content.edit');
+    Route::get('/edit/{id}', [ClientController::class, 'EditClient'])->name('client.edit');
 
-    Route::post('/data/update', [ContentController::class, 'ContentDataUpdate'])->name('content-update');
+    Route::post('/update', [ClientController::class, 'ClientUpdate'])->name('client-update');
 
-    Route::post('/thamble/update', [ContentController::class, 'ThambleImageUpdate'])->name('update-services-thamble');
-
-    Route::get('/inactive/{id}', [ContentController::class, 'ServicesInactive'])->name('services.inactive');
-
-    Route::get('/active/{id}', [ContentController::class, 'ServicesActive'])->name('services.active');
-
-    Route::get('/delete/{id}', [ContentController::class, 'ServicesDelete'])->name('services.delete');
+    Route::get('/delete/{id}', [ClientController::class, 'clientDelete'])->name('client.delete');
 
 });
      
