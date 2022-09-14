@@ -85,16 +85,14 @@ class ContentController extends Controller
 
 		
 
-		if($request->hasFile("breadcrumb")){
-			if (File::exists("upload/services/".$post->breadcrumb)) {
-				File::delete("upload/services/".$post->breadcrumb);
-			}
-			$file=$request->file("breadcrumb");
-			$services_id->breadcrumb=time()."_".$file->getClientOriginalName();
-			$file->move(\public_path("upload/services/"),$services_id->breadcrumb);
-			$request['breadcrumb']=$services_id->breadcrumb;
-		}
-
+		if ($image = $request->file('breadcrumb')) {
+            $destinationPath = 'upload/services/';
+            $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destinationPath, $profileImage);
+            $input['breadcrumb'] = "$profileImage";
+        }else{
+            unset($input['breadcrumb']);
+        }
 
 		Services::findOrFail($services_id)->update([
 			'category_id' => $request->category_id,
@@ -103,7 +101,7 @@ class ContentController extends Controller
 			'content_title' => $request->content_title,
 			'content_descrip' => $request->content_descrip,
 			'long_descrip' => $request->long_descrip,
-			'breadcrumb' => $save_url,
+			
 			'status' => 1,
       		'created_at' => Carbon::now(),   
 

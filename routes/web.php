@@ -9,6 +9,9 @@ use App\Http\Controllers\Frontend\IndexController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\SubCategoryController;
 use App\Http\Controllers\Backend\ContentController;
+use App\Http\Controllers\Backend\GalleryController;
+use App\Http\Controllers\Backend\PortfolioController;
+use App\Http\Controllers\Backend\ClientController;
 
 
 
@@ -116,6 +119,78 @@ Route::prefix('content')->group(function(){
     Route::get('/delete/{id}', [ContentController::class, 'ServicesDelete'])->name('services.delete');
 
 });
+
+// Admin gallery All Routes 
+
+Route::prefix('gallery')->group(function(){
+
+    Route::get('/add', [GalleryController::class, 'AddGallery'])->name('add-gallery');
+
+    Route::post('/store', [GalleryController::class, 'StoreGallery'])->name('gallery-store');
+
+    Route::get('/manage', [GalleryController::class, 'ManageGallery'])->name('manage-gallery');
+
+    Route::get('/edit/{id}', [GalleryController::class, 'EditGallery'])->name('gallery-edit');
+
+    Route::post('/update', [GalleryController::class, 'GalleryUpdate'])->name('gallery-update');
+
+    Route::get('/inactive/{id}', [GalleryController::class, 'GalleryInactive'])->name('gallery.inactive');
+
+    Route::get('/active/{id}', [GalleryController::class, 'GalleryActive'])->name('gallery.active');
+
+    Route::get('/delete/{id}', [GalleryController::class, 'GalleryDelete'])->name('gallery.delete');
+
+});
+
+// Admin Portfolio All Routes 
+
+Route::prefix('portfolio')->group(function(){
+
+    Route::get('/add', [PortfolioController::class, 'AddPortfolio'])->name('add-portfolio');
+
+    Route::post('/store', [PortfolioController::class, 'StorePortfolio'])->name('portfolio-store');
+
+    Route::get('/manage', [PortfolioController::class, 'ManagePortfolio'])->name('manage-portfolio');
+
+    Route::get('/edit/{id}', [PortfolioController::class, 'EditPortfolio'])->name('portfolio-edit');
+
+    Route::post('/update', [PortfolioController::class, 'PortfolioUpdate'])->name('portfolio-update');
+
+    Route::post('/thamble/update', [ContentController::class, 'ThambleImageUpdate'])->name('update-services-thamble');
+
+    Route::get('/inactive/{id}', [PortfolioController::class, 'PortfolioInactive'])->name('portfolio.inactive');
+
+    Route::get('/active/{id}', [PortfolioController::class, 'PortfolioActive'])->name('portfolio.active');
+
+    Route::get('/delete/{id}', [PortfolioController::class, 'PortfolioDelete'])->name('portfolio.delete');
+
+});
+
+// Admin Client All Routes 
+
+Route::prefix('client')->group(function(){
+
+    Route::get('/add', [ClientController::class, 'Addclient'])->name('add-client');
+
+    Route::post('/store', [ContentController::class, 'StoreContent'])->name('content-store');
+
+    Route::get('/manage', [ContentController::class, 'ManageContent'])->name('manage-content');
+
+    Route::get('/edit/{id}', [ContentController::class, 'EditContent'])->name('content.edit');
+
+    Route::post('/data/update', [ContentController::class, 'ContentDataUpdate'])->name('content-update');
+
+    Route::post('/thamble/update', [ContentController::class, 'ThambleImageUpdate'])->name('update-services-thamble');
+
+    Route::get('/inactive/{id}', [ContentController::class, 'ServicesInactive'])->name('services.inactive');
+
+    Route::get('/active/{id}', [ContentController::class, 'ServicesActive'])->name('services.active');
+
+    Route::get('/delete/{id}', [ContentController::class, 'ServicesDelete'])->name('services.delete');
+
+});
+     
+     
      
 
 

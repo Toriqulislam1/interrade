@@ -119,13 +119,13 @@
 		<div class="col-md-4">
 
 				<div class="form-group">
-				<h5>Service Title <span class="text-danger">*</span></h5>
-				<div class="controls">
-				<input type="text" name="content_title" class="form-control" required="">
-				@error('content_title') 
-				<span class="text-danger">{{ $message }}</span>
-				@enderror
-				</div>
+					<h5>Service Title <span class="text-danger">*</span></h5>
+					<div class="controls">
+					<input type="text" name="content_title" class="form-control" required="">
+					@error('content_title') 
+					<span class="text-danger">{{ $message }}</span>
+					@enderror
+					</div>
 				</div>
 
 		</div> <!-- end col md 6 -->
