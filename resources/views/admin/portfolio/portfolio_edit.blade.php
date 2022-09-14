@@ -41,7 +41,8 @@
             <form method="POST" action="{{ route('portfolio-update') }}"  enctype="multipart/form-data" >
                 @csrf
 
-               
+				<input type="hidden" name="id" value="{{ $portfolios->id }}">
+				<input type="hidden" name="old_img" value="{{ $portfolios->port_image }}">
                 	
 	<div class="form-group">
 					<h5>Portfolio Title <span class="text-danger">*</span></h5>

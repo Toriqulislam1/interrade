@@ -59,24 +59,20 @@ class GalleryController extends Controller
 
 	public function GalleryUpdate(Request $request){
 
-		$gallery_id = $request->id;
+		$pro_id = $request->id;
+		$oldImage = $request->old_img;
+		unlink($oldImage);
+   
+	   $image = $request->file('gallery');
+		   $name_gen = hexdec(uniqid()).'.'.$image->getClientOriginalExtension();
+		   Image::make($image)->resize(917,1000)->save('upload/portfolio/'.$name_gen);
+		   $save_url = 'upload/portfolio/'.$name_gen;
 
-		
-
-		if ($image = $request->file('gallery')) {
-            $destinationPath = 'upload/services/';
-            $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
-            $image->move($destinationPath, $profileImage);
-            $input['gallery'] = "$profileImage";
-        }else{
-            unset($input['gallery']);
-        }
-
-		Gallery::findOrFail($gallery_id)->update([
+		Gallery::findOrFail($pro_id)->update([
 			
-			'gallery' => $request->gallery,
+			'gallery' => $save_url,
 			'status' => 1,
-      		'created_at' => Carbon::now(),   
+			'created_at' => Carbon::now(),   
 
 
 		]);

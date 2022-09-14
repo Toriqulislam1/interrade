@@ -56,12 +56,21 @@
 								<td><img src="{{ asset($item->port_image ) }}" style="width: 60px; height: 50px;"></td>
 								<td>{{ $item->port_title }}</td>
 								<td>{{ $item->port_subtitle }}</td>
-                                <td><span class="badge badge-pill badge-success"> Active </span></td>
+                                <td>
+									@if($item->status == 1)
+									<span class="badge badge-pill badge-success"> Active </span>
+									@else
+								<span class="badge badge-pill badge-danger"> InActive </span>
+									@endif</td>
 								
 								<td width="30%">
                                     <a href="{{ route('portfolio-edit',$item->id) }}" class="btn btn-info" title="Edit"><i class="fa fa-pencil"></i></a>
-                                    <a href="" class="btn btn-danger" id="delete" title="delete"><i class="fa fa-trash"></i></a>
-                                    <a href="" class="btn btn-danger" title="Inactive Now"><i class="fa fa-arrow-down"></i> </a>
+                                    <a href="{{ route('portfolio-delete',$item->id) }}" class="btn btn-danger" id="delete" title="delete"><i class="fa fa-trash"></i></a>
+                                    @if($item->status == 1)
+									<a href="{{ route('portfolio.inactive',$item->id) }}" class="btn btn-danger" title="Inactive Now"><i class="fa fa-arrow-down"></i> </a>
+									@else
+									<a href="{{ route('portfolio.active',$item->id) }}" class="btn btn-danger" title="active Now"><i class="fa fa-arrow-up"></i> </a>
+									@endif
                                
                                     
                                 </td>

@@ -36,9 +36,11 @@
 					<div class="table-responsive">
 					  
 
-                    <form method="POST" action="{{ route('gallery-store') }}"  enctype="multipart/form-data" >
+                    <form method="POST" action="{{ route('gallery-update') }}"  enctype="multipart/form-data" >
                     @csrf
-                						
+                			
+					<input type="hidden" name="id" value="{{ $gallery->id }}">
+				<input type="hidden" name="old_img" value="{{ $gallery->gallery }}">
                        
     <div class="form-group">
             <h5>Gallery Image Choose <span class="text-danger">*</span></h5>

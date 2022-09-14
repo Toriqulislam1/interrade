@@ -68,7 +68,7 @@
                                     @if($item->status == 1)
 									<a href="{{ route('gallery.inactive',$item->id) }}" class="btn btn-danger" title="Inactive Now"><i class="fa fa-arrow-down"></i> </a>
 									@else
-									<a href="{{ route('gallery.active',$item->id) }}" class="btn btn-danger" title="Active Now"><i class="fa fa-arrow-down"></i> </a>
+									<a href="{{ route('gallery.active',$item->id) }}" class="btn btn-danger" title="Active Now"><i class="fa fa-arrow-up"></i> </a>
 									@endif
                                
                                     

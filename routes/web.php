@@ -162,7 +162,7 @@ Route::prefix('portfolio')->group(function(){
 
     Route::get('/active/{id}', [PortfolioController::class, 'PortfolioActive'])->name('portfolio.active');
 
-    Route::get('/delete/{id}', [PortfolioController::class, 'PortfolioDelete'])->name('portfolio.delete');
+    Route::get('/delete/{id}', [PortfolioController::class, 'PortfolioDelete'])->name('portfolio-delete');
 
 });
 
