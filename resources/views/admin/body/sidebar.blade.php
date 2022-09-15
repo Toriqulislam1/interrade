@@ -5,10 +5,10 @@
 		
         <div class="user-profile">
 			<div class="ulogo">
-				 <a href="index.html">
+				 <a href="/admin/dashboard">
 				  <!-- logo for regular state and mobile devices -->
 					 <div class="d-flex align-items-center justify-content-center">					 	
-						  <img src="../images/logo-dark.png" alt="">
+						  <img src="/admin/dashboard" alt="">
 						  <h3><b>Technoval</b> Admin</h3>
 					 </div>
 				</a>

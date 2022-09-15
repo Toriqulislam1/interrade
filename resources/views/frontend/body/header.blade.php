@@ -10,84 +10,53 @@
 				   <div class="custom-nav" role="navigation">
 					  <ul class="nav-list">
 						 <li class="sbmenu">
-							<a href="/" class="menu-links">HOME</a>
+							<a href="{{ url('/')}}" class="menu-links">HOME</a>
 							<div class="nx-dropdown">
 							   
 						 </li>
+
+		<!--   // Get Category Table Data -->
+		@php
+		$categories = App\Models\Category::orderBy('category_name','ASC')->get();
+		@endphp
+
+
+						@foreach($categories as $category)
 						 <li class="sbmenu">
-							<a href="#about" class="menu-links">ABOUT</a>
-							<div class="nx-dropdown">
-							   
-						 </li>
-						 <li class="sbmenu">
-							<a href="#services" class="menu-links">SERVICES</a>
+							<a href="#services" class="menu-links">{{ $category->category_name}}</a>
 							<div class="nx-dropdown">
 							   <div class="sub-menu-section">
 								  <div class="container">
 									 <div class="sub-menu-center-block">
-										<div class="sub-menu-column">
-										   <ul>
-											  <li><a href="about.html">About Us</a></li>
-											  <li><a href="about-2.html">About Us V2</a></li>
-											  <li><a href="why-us.html">Why Us</a></li>
-											  <li><a href="team.html">Our Team</a></li>
-											  <li><a href="team-details.html">Team Single</a></li>
-											  <li><a href="case-study.html">Case Study</a></li>
-											  <li><a href="case-study-details.html">Case Study Single</a></li>
-										   </ul>
-										</div>
-										<div class="sub-menu-column">
-										   <ul>
-											  <li><a href="mission-vision.html">Mission & Vision</a></li>
-											  <li><a href="development-process.html">Development Process</a></li>
-											  <li><a href="client-reviews.html">Client Reviews</a> </li>
-											  <li><a href="clients.html">Our Clients</a></li>
-											  <li><a href="get-quote.html">Contact Us</a> </li>
-											  <li><a href="get-quote-2.html">Contact Us 2</a> </li>
-											  <li><a href="get-quote-3.html">Contact Us 3</a> </li>
-										   </ul>
-										</div>
-										<div class="sub-menu-column">
-										   <ul>
-											  <li><a href="login.html">Login Page</a> </li>
-											  <li><a href="service-card.html">Service Card</a> </li>
-											  <li><a href="service-web.html">Service Web</a></li>
-											  <li><a href="service-app.html">Service Mobile App</a></li>
-											  <li><a href="service-marketing.html">Service Digital Marketing</a></li>
-											  <li><a href="service-graphic.html">Service Graphic</a></li>
-										   </ul>
-										</div>
-										<div class="sub-menu-column">
-										   <ul>
-											  <li><a href="career.html">Careers</a> </li>
-											  <li><a href="shop-page.html">Shop Single</a> </li>
-											  <li><a href="shop-details.html">Shop Details</a> </li>
-											  <li><a href="shop-cart.html">Shop Cart</a> </li>
-										   </ul>
-										</div>
+
+							<div class="sub-menu-column">
+									<ul>
+
+
+	<!--   // Get SubCategory Table Data -->
+							@php
+							$subcategories = App\Models\SubCategory::where('category_id',$category->id)->orderBy('subcategory_name','DESC')->get();
+							@endphp
+										
+							@foreach($subcategories as $subcategory)
+
+
+
+									  <li><a href="about.html">{{ $subcategory->subcategory_name}}</a></li>
+									     @endforeach
+									</ul>
+							</div>
+										
+									
 									 </div>
 								  </div>
 							   </div>
 							</div>
 						 </li>
-						 <li class="sbmenu">
-							<a href="#" class="menu-links">TRAINING</a>
 						
-						 </li>
-						 <li class="sbmenu rpdropdown">
-							<a href="#work" class="menu-links">PORTFOLIO</a>
-							
-						 </li>
-						 <li class="sbmenu rpdropdown">
-							<a href="#clients" class="menu-links">CLIENTS</a>
-							
-						 </li>
-						 <li class="sbmenu rpdropdown">
-							<a href="#blog" class="menu-links">BLOG</a>
-							<div class="nx-dropdown menu-dorpdown">
-							   
-							</div>
-						 </li>
+						 @endforeach
+						 
+						
 						 <li><a href="get-quote.html" class="btn-br bg-btn5 btshad-b2 lnk" data-bs-toggle="modal" data-bs-target="#menu-popup">Request A Quote <span class="circle"></span></a> </li>
               </ul>
               <!-- mobile + desktop - sidebar menu- dark mode witch and button -->

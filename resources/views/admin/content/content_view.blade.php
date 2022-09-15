@@ -19,6 +19,7 @@
 			 <div class="box">
 				<div class="box-header with-border">
 				  <h3 class="box-title">Service  List <span class="badge badge-pill badge-danger">  </span></h3>
+				  <a class="btn btn-primary" href="{{ route('add-content')}}" role="button">Add New Service</a>
 				</div>
 				<!-- /.box-header -->
 				<div class="box-body">

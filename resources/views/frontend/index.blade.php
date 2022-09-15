@@ -157,92 +157,22 @@
 						</div>
 			<div class="row upset ">
 			
+			@php
+		$services = App\Models\Services::orderBy('content_title','desc')->get();
+		@endphp
+
+			@foreach($services as $item)
 				<div class="col-lg-3 col-sm-6 mt30 wow fadeInUp" data-wow-delay=".6s">
 					<div class="s-block up-hor pt20">
 						<div class="nn-card-set">
-							<div class="card-icon"><img src="{{ asset('frontend/assets/images/services/digital-marketing.jpg')}}" alt="service" class="img-fluid" /></div>
-							<h4>Digital Marketing</h4>
+							<div class="card-icon"><img src="{{ asset($item->thamble) }}" alt="service" class="img-fluid" /></div>
+							<h4>{{ $item->content_title}}</h4>
 							
 							<a href="javascript:void(0)">Learn More <i class="fas fa-chevron-right fa-icon"></i></a>
 						</div>
 					</div>
 				</div>
-				<div class="col-lg-3 col-sm-6 mt30 wow fadeInUp" data-wow-delay=".2s">
-					<div class="s-block up-hor pt20">
-						<div class="nn-card-set">
-							<div class="card-icon"><img src="{{ asset('frontend/assets/images/services/Website-Development.jpg')}}" alt="service" class="img-fluid" /></div>
-							<h5>Software Development</h5>
-							<!--p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p-->
-							<a href="javascript:void(0)">Learn More <i class="fas fa-chevron-right fa-icon"></i></a>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-sm-6 mt30 wow fadeInUp" data-wow-delay=".4s">
-					<div class="s-block up-hor pt20">
-						<div class="nn-card-set">
-							<div class="card-icon"><img src="{{ asset('frontend/assets/images/services/software-development.jpg')}}" alt="service" class="img-fluid" /></div>
-							<h6>Web Design & Development</h6>
-							
-							<a href="javascript:void(0)">Learn More <i class="fas fa-chevron-right fa-icon"></i></a>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-sm-6 mt30 wow fadeInUp" data-wow-delay=".8s">
-					<div class="s-block up-hor pt20">
-						<div class="nn-card-set">
-							<div class="card-icon"><img src="{{ asset('frontend/assets/images/services/Android-App.jpg')}}" alt="service" class="img-fluid" /></div>
-							<h6>Mobile App Development</h6>
-							
-							<a href="javascript:void(0)">Learn More <i class="fas fa-chevron-right fa-icon"></i></a>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-sm-6 mt30 wow fadeInUp" data-wow-delay=".8s">
-					<div class="s-block up-hor pt20">
-						<div class="nn-card-set">
-							<div class="card-icon"><img src="{{ asset('frontend/assets/images/services/SEO.jpg')}}" alt="service" class="img-fluid" /></div>
-							<h4>SEO</h4>
-							
-							<a href="javascript:void(0)">Learn More <i class="fas fa-chevron-right fa-icon"></i></a>
-						</div>
-					</div>
-				</div>
-				
-				<div class="col-lg-3 col-sm-6 mt30 wow fadeInUp" data-wow-delay=".8s">
-					<div class="s-block up-hor pt20">
-						<div class="nn-card-set">
-							<div class="card-icon"><img src="{{ asset('frontend/assets/images/services/Affiliate-Marketing.jpg')}}" alt="service" class="img-fluid" /></div>
-							<h4>Affiliate Marketing</h4>
-							
-							<a href="javascript:void(0)">Learn More <i class="fas fa-chevron-right fa-icon"></i></a>
-						</div>
-					</div>
-				</div>
-		
-				
-				<div class="col-lg-3 col-sm-6 mt30 wow fadeInUp" data-wow-delay=".8s">
-					<div class="s-block up-hor pt20">
-						<div class="nn-card-set">
-							<div class="card-icon"><img src="{{ asset('frontend/assets/images/services/Creative-Design.jpg')}}" alt="service" class="img-fluid" /></div>
-							<h4>Creative Design</h4>
-							
-							<a href="javascript:void(0)">Learn More <i class="fas fa-chevron-right fa-icon"></i></a>
-						</div>
-					</div>
-				</div>
-				
-				<div class="col-lg-3 col-sm-6 mt30 wow fadeInUp" data-wow-delay=".8s">
-					<div class="s-block up-hor pt20">
-						<div class="nn-card-set">
-							<div class="card-icon"><img src="{{ asset('frontend/assets/images/services/Documentary-Video.jpg')}}" alt="service" class="img-fluid" /></div>
-							<h4>Pro Video Editing</h4>
-							
-							<a href="javascript:void(0)">Learn More <i class="fas fa-chevron-right fa-icon"></i></a>
-						</div>
-					</div>
-				</div>
-				
-		
+				@endforeach
 			
 			</div>
 		</div>
@@ -267,73 +197,27 @@
 </div>
 </div>
 <div class="row">
+	
+@php
+$gallery = App\Models\Gallery::orderBy('id','desc')->get();
+@endphp
+
+
+@foreach($gallery as $item)
 <div class="col-lg-3 col-sm-6 single-card-item wow fadeInUp" data-wow-delay=".2s">
 <div class="isotope_item h-scl-">
 	<div class="item-image h-scl-base">
-		<a href="#"><img src="{{ asset('frontend/assets/images/portfolio/port4.jpg')}}" alt="portfolio" class="img-fluid"/> </a>
-	</div>
-	<!--div class="item-info">
-		<h4><a href="#">Creative App</a></h4>
-		<p>ios, design</p>
-	</div-->
-</div>
-</div>
-<div class="col-lg-3 col-sm-6 single-card-item  wow fadeInUp" data-wow-delay=".4s">
-<div class="isotope_item h-scl-">
-	<div class="item-image h-scl-base">
-		<a href="#"><img src="{{ asset('frontend/assets/images/portfolio/port1.jpg')}}" alt="image" class="img-fluid"/> </a>
+		<a href="#"><img src="{{ asset($item->gallery) }}" alt="portfolio" class="img-fluid"/> </a>
 	</div>
 	
 </div>
 </div>
-<div class="col-lg-3 col-sm-6 single-card-item  wow fadeInUp" data-wow-delay=".6s">
-<div class="isotope_item h-scl-">
-	<div class="item-image h-scl-base">
-		<a href="#"><img src="{{ asset('frontend/assets/images/portfolio/port2.jpg')}}" alt="image" class="img-fluid"/> </a>
-	</div>
-	
-</div>
-</div>
-<div class="col-lg-3 col-sm-6 single-card-item  wow fadeInUp" data-wow-delay=".8s">
-<div class="isotope_item h-scl-">
-	<div class="item-image h-scl-base">
-		<a href="#"><img src="{{ asset('frontend/assets/images/portfolio/port3.jpg')}}" alt="image" class="img-fluid"/> </a>
-	</div>
-	
-</div>
-</div>
-<div class="col-lg-3 col-sm-6 single-card-item  wow fadeInUp" data-wow-delay="1s">
-<div class="isotope_item h-scl-">
-	<div class="item-image h-scl-base">
-		<a href="#"><img src="{{ asset('frontend/assets/images/portfolio/port5.jpg')}}" alt="image" class="img-fluid"/> </a>
-	</div>
-	
-</div>
-</div>
-<div class="col-lg-3 col-sm-6 single-card-item  wow fadeInUp" data-wow-delay="1.2s">
-<div class="isotope_item h-scl-">
-	<div class="item-image h-scl-base">
-		<a href="#"><img src="{{ asset('frontend/assets/images/portfolio/port6.jpg')}}" alt="image" class="img-fluid"/> </a>
-	</div>
-	
-</div>
-</div>
-<div class="col-lg-3 col-sm-6 single-card-item  wow fadeInUp" data-wow-delay="1.2s">
-<div class="isotope_item h-scl-">
-	<div class="item-image h-scl-base">
-		<a href="#"><img src="{{ asset('frontend/assets/images/portfolio/port7.jpg')}}" alt="image" class="img-fluid"/> </a>
-	</div>
-	
-</div>
-</div>
-<div class="col-lg-3 col-sm-6 single-card-item  wow fadeInUp" data-wow-delay="1.2s">
-<div class="isotope_item h-scl-">
-	<div class="item-image h-scl-base">
-		<a href="#"><img src="{{ asset('frontend/assets/images/portfolio/port8.jpg')}}" alt="image" class="img-fluid"/> </a>
-	</div>
-	
-</div>
-</div>
+@endforeach
+
+
+
+
+
 </div>
 </div>
 <div class="row">
@@ -451,52 +335,26 @@ c237.6-5.7,475.3-3.1,712.7,7.7c164.2,7.5,328.1,23.7,492.3,31c0.7,0,15.2,0.5,15.2
 					</div>
 				</div>
 				<div class="row">
+
+@php
+$portfolios = App\Models\Portfolio::orderBy('id','desc')->get();
+@endphp
+
+		@foreach($portfolios as $item)
 					<div class="col-lg-3 col-sm-6 col mt40 wow fadeIn" data-wow-delay="0.2s">
 						<div class="isotope_item up-hor">
 							<div class="item-image">
-								<a href="#"><img src="{{ asset('frontend/assets/images/portfolio/college.jpg')}}" alt="image" class="img-fluid" /> </a>
+								<a href="#"><img src="{{ asset($item->port_image)}}" alt="image" class="img-fluid" /> </a>
 							</div>
 							<div class="item-info-div shdo">
-								<h4><a href="#">School College Univesity Management</a></h4>
-								<p>Web,iOs, Android</p>
+								<h4>{{ $item->port_title}}</h4>
+								<p>{{ $item->port_subtitle}}</p>
 							</div>
 						</div>
 					</div>
-					<div class="col-lg-3 col-sm-6 mt40 wow fadeIn" data-wow-delay="0.4s">
-						<div class="isotope_item up-hor">
-							<div class="item-image">
-								<a href="#"><img src="{{ asset('frontend/assets/images/portfolio/ecommerce.png')}}" alt="image" class="img-fluid" /> </a>
-							</div>
-							<div class="item-info-div shdo">
-								<h4><a href="#">Ecommerce App</a></h4>
-								<p>Web,iOs, Android</p>
-								
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-3 col-sm-6 mt40 wow fadeIn" data-wow-delay="0.6s">
-						<div class="isotope_item up-hor">
-							<div class="item-image">
-								<a href="#"><img src="{{ asset('frontend/assets/images/portfolio/shop.png')}}" alt="image" class="img-fluid" /> </a>
-							</div>
-							<div class="item-info-div shdo">
-								<h4><a href="#">Shop Management App</a></h4>
-								<p>Web,iOs, Android</p>
-								
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-3 col-sm-6 mt40 wow fadeIn" data-wow-delay="0.8s">
-						<div class="isotope_item up-hor">
-							<div class="item-image">
-								<a href="#"><img src="{{ asset('frontend/assets/images/portfolio/hospital.jpg')}}" alt="image" class="img-fluid" /> </a>
-							</div>
-							<div class="item-info-div shdo">
-								<h4><a href="#">Hospital Management</a></h4>
-								<p>Web,iOs, Android</p>
-							</div>
-						</div>
-					</div>
+		@endforeach
+					
+					
 					
 					
 				</div>
@@ -518,59 +376,17 @@ c237.6-5.7,475.3-3.1,712.7,7.7c164.2,7.5,328.1,23.7,492.3,31c0.7,0,15.2,0.5,15.2
 					<div class="col-lg-12">
 						<div class="client-logoset">
 							<ul class="row text-center clearfix apppg">
+
+@php
+$clients = App\Models\Client::orderBy('id','desc')->get();
+@endphp
+
+							@foreach($clients as $item)
 							<li class="col-lg-2 col-md-3 col-sm-4 col-6 mt30 wow fadeIn" data-wow-delay=".6s">
-									<div class="brand-logo hoshd"><img src="{{ asset('frontend/assets/images/client/gov.png')}}" alt="clients" class="img-fluid"></div>
-									<p>DC Office, Sirajganj</p>
-								</li>
-								<li class="col-lg-2 col-md-3 col-sm-4 col-6 mt30 wow fadeIn" data-wow-delay=".6s">
-									<div class="brand-logo hoshd"><img src="{{ asset('frontend/assets/images/client/gov.png')}}" alt="clients" class="img-fluid"></div>
-									<p>DC Office, Rangpur</p>
-								</li>
-								<li class="col-lg-2 col-md-3 col-sm-4 col-6 mt30 wow fadeIn" data-wow-delay=".2s">
-									<div class="brand-logo hoshd"><img src="{{ asset('frontend/assets/images/client/gaac.png')}}" alt="clients" class="img-fluid"></div>
-									<p>Gov't Akbar Ali College, Ullapara</p>
-								</li>
-								<li class="col-lg-2 col-md-3 col-sm-4 col-6 mt30 wow fadeIn" data-wow-delay=".4s">
-									<div class="brand-logo hoshd"><img src="{{ asset('frontend/assets/images/client/salanga.png')}}" alt="clients" class="img-fluid"></div>
-									<p>Salanga Degree College, Salanaga</p>
-								</li>
-								<li class="col-lg-2 col-md-3 col-sm-4 col-6 mt30 wow fadeIn" data-wow-delay=".6s">
-									<div class="brand-logo hoshd"><img src="{{ asset('frontend/assets/images/client/nalka.png')}}" alt="clients" class="img-fluid"></div>
-									<p>Nalka Model High School, Sirajganj</p>
-								</li>
-								<li class="col-lg-2 col-md-3 col-sm-4 col-6 mt30 wow fadeIn" data-wow-delay=".8s">
-									<div class="brand-logo hoshd"><img src="{{ asset('frontend/assets/images/client/haima.png')}}" alt="clients" class="img-fluid"></div>
-									<p>Haima Bala Girls H School, Sirajganj</p>
-								</li>
-								<li class="col-lg-2 col-md-3 col-sm-4 col-6 mt30 wow fadeIn" data-wow-delay="1s">
-									<div class="brand-logo hoshd"><img src="{{ asset('frontend/assets/images/client/bdkoo.jpg')}}" alt="clients" class="img-fluid"></div>
-									<p>BDKOO, Dhaka</p>
-								</li>
-								<li class="col-lg-2 col-md-3 col-sm-4 col-6 mt30 wow fadeIn" data-wow-delay="1s">
-									<div class="brand-logo hoshd"><img src="{{ asset('frontend/assets/images/client/holystar.png')}}" alt="clients" class="img-fluid"></div>
-									<p>Holystar Group, Dhaka</p>
-								</li>
-								<li class="col-lg-2 col-md-3 col-sm-4 col-6 mt30 wow fadeIn" data-wow-delay="1s">
-									<div class="brand-logo hoshd"><img src="{{ asset('frontend/assets/images/client/hospital.jpg')}}" alt="clients" class="img-fluid"></div>
-									<p>Desh Hospital, Cumilla</p>
-								</li>
-								<li class="col-lg-2 col-md-3 col-sm-4 col-6 mt30 wow fadeIn" data-wow-delay="1s">
-									<div class="brand-logo hoshd"><img src="{{ asset('frontend/assets/images/client/zip.png')}}" alt="clients" class="img-fluid"></div>
-									<p>Zip communication, Dhaka</p>
-								</li>
-								<li class="col-lg-2 col-md-3 col-sm-4 col-6 mt30 wow fadeIn" data-wow-delay="1s">
-									<div class="brand-logo hoshd"><img src="{{ asset('frontend/assets/images/client/golpo.PNG')}}" alt="clients" class="img-fluid"></div>
-									<p>Golpo Griho, Dhaka</p>
-								</li>
-								<li class="col-lg-2 col-md-3 col-sm-4 col-6 mt30 wow fadeIn" data-wow-delay="1s">
-									<div class="brand-logo hoshd"><img src="{{ asset('frontend/assets/images/client/bgi.jpg')}}" alt="clients" class="img-fluid"></div>
-									<p>BGI, Dhaka</p>
-								</li>
-								
-								
-								
-								
-								
+									<div class="brand-logo hoshd"><img src="{{ asset($item->client_logo)}}" alt="clients" class="img-fluid"></div>
+									<p>{{ $item->client_title}}</p>
+							</li>
+								@endforeach
 							</ul>
 						</div>
 					</div>

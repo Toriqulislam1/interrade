@@ -41,7 +41,7 @@
 						<tbody>
 	 @foreach($subcategory as $item)
 	 <tr>
-		<td> {{ $item['category']['category_name'] }}  </td>
+		<td>   </td>
 		<td>{{ $item->subcategory_name }}</td>
 		<td width="30%">
  <a href="{{ route('subcategory.edit',$item->id) }}" class="btn btn-info" title="Edit Data"><i class="fa fa-pencil"></i> </a>
