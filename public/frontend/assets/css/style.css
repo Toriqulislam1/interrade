@@ -231,11 +231,11 @@ padding: 0 20px;}
 .sub-menu-column .menuheading {
 color: #050748;
 font-weight: 700;
-font-size: 18px;
+font-size: 15px;
 letter-spacing: .2px;
 margin: 0 0 16px 0;
 padding: 0 0 14px 0;
-border-bottom: 1px solid #dadada;}
+border-bottom: .5px solid #980909;}
 .sub-menu-column ul {width: 100%; display: inline-block; position: relative; }
 .sub-menu-column ul li {
 width: 100%;

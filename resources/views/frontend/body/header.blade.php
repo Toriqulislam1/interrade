@@ -4,7 +4,7 @@
 				<div class="menu-header">
 				   <div class="dsk-logo"><a class="nav-brand" href="/">
 					  <img src="images/white-logo.png" alt="Logo" class="mega-white-logo"/>
-					  <img src="frontend/assets/images/logo.png" alt="Logo" class="mega-darks-logo"/>
+					  <img src="{{ asset('frontend/assets/images/logo.png')}}" alt="Logo" class="mega-darks-logo"/>
 					  </a>
 				   </div>
 				   <div class="custom-nav" role="navigation">
@@ -14,6 +14,7 @@
 							<div class="nx-dropdown">
 							   
 						 </li>
+						
 
 		<!--   // Get Category Table Data -->
 		@php
@@ -29,23 +30,39 @@
 								  <div class="container">
 									 <div class="sub-menu-center-block">
 
+
+									 @php
+							$subcategories = App\Models\SubCategory::where('category_id',$category->id)->orderBy('subcategory_name','DESC')->get();
+							@endphp
+
+							@foreach($subcategories as $subcategory)
+
 							<div class="sub-menu-column">
+							
+
+							<div class="menuheading">{{ $subcategory->subcategory_name}}</div>
+
+
+
+							<!--   // Get SubCategory Table Data -->
+							@php
+							$childcategories = App\Models\ChildCategory::where('subcategory_id',$subcategory->id)->orderBy('childcategory_name','DESC')->get();
+							@endphp
+										
+							@foreach($childcategories as $childcategory)
+
+							
 									<ul>
 
 
-	<!--   // Get SubCategory Table Data -->
-							@php
-							$subcategories = App\Models\SubCategory::where('category_id',$category->id)->orderBy('subcategory_name','DESC')->get();
-							@endphp
-										
-							@foreach($subcategories as $subcategory)
 
-
-
-									  <li><a href="about.html">{{ $subcategory->subcategory_name}}</a></li>
-									     @endforeach
+									  <li><a href="{{ url('services/details/'.$childcategory->id.'/'.$childcategory->id ) }}">{{ $childcategory->childcategory_name}}</a></li>
+									    
 									</ul>
+									@endforeach
 							</div>
+
+							@endforeach
 										
 									
 									 </div>

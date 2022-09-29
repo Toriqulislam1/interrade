@@ -1,5 +1,9 @@
 @extends('frontend.front_master')
 @section('content')
+@section('title')
+Technoval BD
+@endsection
+
 <body>
 <section class="hero-slider hero-style" >
 	  <div id="particles-js">
@@ -168,7 +172,7 @@
 							<div class="card-icon"><img src="{{ asset($item->thamble) }}" alt="service" class="img-fluid" /></div>
 							<h4>{{ $item->content_title}}</h4>
 							
-							<a href="javascript:void(0)">Learn More <i class="fas fa-chevron-right fa-icon"></i></a>
+							<a href="{{ url('services/details/'.$item->id.'/'.$item->content_title ) }}">Learn More <i class="fas fa-chevron-right fa-icon"></i></a>
 						</div>
 					</div>
 				</div>

@@ -2,7 +2,7 @@
 <html lang="en" class="no-js">
 <head>
 	<meta charset="utf-8"/>
-	<title>Technoval IT</title>
+	<title>@yield('title') </title>
 	<meta name="description" content="Software Development, Digital Marketing & Video edit services">
 	<meta name="keywords" content="Digital Marketing, Software Development, Video Editing">
 	<meta name="author" content="technovalbd">

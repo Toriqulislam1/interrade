@@ -13,18 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('services', function (Blueprint $table) {
+        Schema::create('childcategories', function (Blueprint $table) {
             $table->id();
             $table->integer('category_id');
             $table->integer('subcategory_id');
-            $table->integer('childcategory_id');
-            $table->string('content_slide_title');
-            $table->string('breadcrumb');
-            $table->string('content_title');
-            $table->string('content_descrip');
-            $table->string('long_descrip');
-            $table->string('thamble');
-            $table->integer('status')->default(0);
+            $table->string('childcategory_name');
+            $table->string('childcategory_slug');
             $table->timestamps();
         });
     }
@@ -36,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('services');
+        Schema::dropIfExists('childcategories');
     }
 };

@@ -94,7 +94,26 @@ Route::post('/sub/update', [SubCategoryController::class, 'SubCategoryUpdate'])-
 Route::get('/sub/delete/{id}', [SubCategoryController::class, 'SubCategoryDelete'])->name('subcategory.delete');
 
 
+// all child Category 
+
+Route::get('/child/view', [SubCategoryController::class, 'ChildCategoryView'])->name('all.childcategory');
+
+Route::post('/child/store', [SubCategoryController::class, 'ChildCategoryStore'])->name('childcategory.store');
+
+Route::get('/child/edit/{id}', [SubCategoryController::class, 'ChildCategoryEdit'])->name('childcategory.edit');
+
+Route::get('/childcategory/ajax/{category_id}', [SubCategoryController::class, 'GetChildCategory']);
+
+Route::post('/child/update', [SubCategoryController::class, 'CategoryChildUpdate'])->name('childcategory.update');
+
+Route::get('/child/delete/{id}', [SubCategoryController::class, 'ChildCategoryDelete'])->name('childcategory.delete');
+
+
+
     });
+
+
+    
 
 // Admin Content All Routes 
 
@@ -183,8 +202,17 @@ Route::prefix('client')->group(function(){
     Route::get('/delete/{id}', [ClientController::class, 'clientDelete'])->name('client.delete');
 
 });
+
+
+// Frontend Product Details Page url 
+Route::get('/services/details/{id}/{slug}', [IndexController::class, 'ServicesDetails']);
+
+// Frontend Sub-SubCategory wise Data
+Route::get('/childcategory/services/{childcat_id}/{slug}', [IndexController::class, 'ChildCatWiseServices']);
+
      
-     
+
+   
      
 
 

@@ -40,6 +40,7 @@ class ContentController extends Controller
 		Services::insert([
 			'category_id' => $request->category_id,
 			'subcategory_id' => $request->subcategory_id,
+			'childcategory_id' => $request->childcategory_id,
 			'content_slide_title' => $request->content_slide_title,
 			'content_title' => $request->content_title,
 			'content_descrip' => $request->content_descrip,
@@ -93,6 +94,7 @@ class ContentController extends Controller
 		Services::findOrFail($services_id)->update([
 			'category_id' => $request->category_id,
 			'subcategory_id' => $request->subcategory_id,
+			'childcategory_id' => $request->childcategory_id,
 			'content_slide_title' => $request->content_slide_title,
 			'content_title' => $request->content_title,
 			'content_descrip' => $request->content_descrip,

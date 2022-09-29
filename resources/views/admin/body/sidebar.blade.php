@@ -82,6 +82,7 @@
           <ul class="treeview-menu">
             <li><a href="{{ route('all.category')}}"><i class="ti-more"></i>Main Category</a></li>
             <li><a href="{{ route('all.subcategory')}}"><i class="ti-more"></i>Sub Category</a></li>
+            <li><a href="{{ route('all.childcategory')}}"><i class="ti-more"></i>Child Category</a></li>
           </ul>
         </li>
 		 
