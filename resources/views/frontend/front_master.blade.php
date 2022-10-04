@@ -33,10 +33,7 @@
         #particles-js {
             width: 100%;
             height: 100vh;
-            background-image:
-                linear-gradient(rgba(0, 0, 0, 0.7),
-                    rgba(0, 0, 0, 0.7)),
-                url("frontend/assets/img/img.jpg");
+           
             background-position: center;
             background-size: cover;
         }
@@ -56,7 +53,9 @@
     </style>
 	
  </head>
- <body>      
+ <body>   
+
+
 
 @include('frontend.body.header')
 

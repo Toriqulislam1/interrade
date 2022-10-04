@@ -37,6 +37,8 @@
 				 <div class="form-group">
 	<h5>Category Select <span class="text-danger">*</span></h5>
 	<div class="controls">
+
+	
 	<select name="category_id" class="form-control" required="" >
 			<option value="" selected="" disabled="">Select Category</option>
 			@foreach($categories as $category)
@@ -47,6 +49,7 @@
 	 <span class="text-danger">{{ $message }}</span>
 	 @enderror 
 	 </div>
+	
 		 </div>
 				
 			</div> <!-- end col md 4 -->
@@ -55,9 +58,10 @@
 			<div class="col-md-4">
 
 				 <div class="form-group">
-	<h5>Sub Category Select <span class="text-danger">*</span></h5>
+	<h5>Sub Category Select <span class="text-danger"></span></h5>
 	<div class="controls">
-	<select name="subcategory_id" class="form-control" required="" >
+	
+	<select name="subcategory_id" class="form-control"  >
 			<option value="" selected="" disabled="">Select SubCategory</option>
 			 
 		</select>
@@ -66,15 +70,15 @@
 	 @enderror 
 	 </div>
 		 </div>
-				
+	
 			</div> <!-- end col md 4 -->
 
 			<div class="col-md-4">
 
 <div class="form-group">
-<h5>Child Category Select <span class="text-danger">*</span></h5>
+<h5>Child Category Select <span class="text-danger"></span></h5>
 <div class="controls">
-<select name="childcategory_id" class="form-control" required="" >
+<select name="childcategory_id" class="form-control"  >
 <option value="" selected="" disabled="">Select Child Category</option>
 
 </select>

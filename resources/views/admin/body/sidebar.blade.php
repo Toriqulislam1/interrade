@@ -47,9 +47,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="mailbox_inbox.html"><i class="ti-more"></i>Inbox</a></li>
-            <li><a href="mailbox_compose.html"><i class="ti-more"></i>Compose</a></li>
-            <li><a href="mailbox_read_mail.html"><i class="ti-more"></i>Read</a></li>
+            <li><a href="{{ route('all-message')}}"><i class="ti-more"></i>All Request</a></li>
+            
           </ul>
         </li>
 		
@@ -62,12 +61,13 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="profile.html"><i class="ti-more"></i>Main Banner</a></li>
+            <li><a href="#"><i class="ti-more"></i>Main Banner</a></li>
             <li><a href="{{ route('add-content')}}"><i class="ti-more"></i>Add Services</a></li>
             <li><a href="{{ route('manage-content')}}"><i class="ti-more"></i>Manage Services</a></li>
             <li><a href="{{ route('add-gallery')}}"><i class="ti-more"></i>Gallery</a></li>
             <li><a href="{{ route('add-portfolio')}}"><i class="ti-more"></i>Portfolio</a></li>
             <li><a href="{{ route('add-client')}}"><i class="ti-more"></i>Client</a></li>
+            
           </ul>
         </li> 
 		

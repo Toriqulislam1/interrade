@@ -1,6 +1,9 @@
+
+
 <!--Start Header -->
 <header class="nav-bg-w main-header navfix fixed-top menu-white">
          <div class="container-fluid m-pad">
+
 				<div class="menu-header">
 				   <div class="dsk-logo"><a class="nav-brand" href="/">
 					  <img src="images/white-logo.png" alt="Logo" class="mega-white-logo"/>
@@ -18,7 +21,7 @@
 
 		<!--   // Get Category Table Data -->
 		@php
-		$categories = App\Models\Category::orderBy('category_name','ASC')->get();
+		$categories = App\Models\Category::orderBy('category_name','DESC')->get();
 		@endphp
 
 
@@ -39,8 +42,8 @@
 
 							<div class="sub-menu-column">
 							
-
-							<div class="menuheading">{{ $subcategory->subcategory_name}}</div>
+						<a href="{{ url('/services/subcategory/'.$subcategory->id.'/'.$subcategory->subcategory_slug) }}">
+							<div class="menuheading">{{ $subcategory->subcategory_name}}</div> </a>
 
 
 
@@ -56,7 +59,7 @@
 
 
 
-									  <li><a href="{{ url('services/details/'.$childcategory->id.'/'.$childcategory->id ) }}">{{ $childcategory->childcategory_name}}</a></li>
+									  <li><a href="{{ url('/childcategory/services/'.$childcategory->id.'/'.$childcategory->childcategory_slug) }}">{{ $childcategory->childcategory_name}}</a></li>
 									    
 									</ul>
 									@endforeach
@@ -72,7 +75,11 @@
 						 </li>
 						
 						 @endforeach
-						 
+						 <li class="sbmenu">
+							<a href="{{ route('contact-us')}}" class="menu-links">CONTACT US</a>
+							<div class="nx-dropdown">
+							   
+						 </li>
 						
 						 <li><a href="get-quote.html" class="btn-br bg-btn5 btshad-b2 lnk" data-bs-toggle="modal" data-bs-target="#menu-popup">Request A Quote <span class="circle"></span></a> </li>
               </ul>
@@ -184,11 +191,12 @@
 <!-- Modal body -->
 <div class="modal-body">
 <div class="form-block fdgn2 mt10 mb10">
-<form action="#" method="post" name="feedback-form">
+<form action="{{ route('contact-form')}}" method="post" name="feedback-form">
+	@csrf
 <div class="fieldsets row">
-<div class="col-md-12"><input type="text" placeholder="Full Name" name="name"></div>
-<div class="col-md-12"><input type="email" placeholder="Email Address" name="email"></div>
-<div class="col-md-12"><input type="number" placeholder="Contact Number" name="phone"></div>
+<div class="col-md-12"><input type="text" placeholder="Full Name" name="full_name"></div>
+<div class="col-md-12"><input type="email" placeholder="Email Address" name="email_address"></div>
+<div class="col-md-12"><input type="number" placeholder="Contact Number" name="mobile"></div>
 <div class="col-md-12"><input type="text" placeholder="Subject" name="subject"></div>
 <div class="col-md-12"><textarea placeholder="Message" name="message"></textarea></div>
 </div>

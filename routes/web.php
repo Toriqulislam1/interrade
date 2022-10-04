@@ -12,6 +12,8 @@ use App\Http\Controllers\Backend\ContentController;
 use App\Http\Controllers\Backend\GalleryController;
 use App\Http\Controllers\Backend\PortfolioController;
 use App\Http\Controllers\Backend\ClientController;
+use App\Http\Controllers\Backend\ContactController;
+use App\Http\Controllers\Frontend\ContactUsController;
 
 
 
@@ -52,6 +54,8 @@ Route::prefix('admin')->group(function (){
     Route::get('/change/password', [AdminProfileController::class, 'AdminChangePassword'])->name('admin.change.password');
 
     Route::post('/update/change/password', [AdminProfileController::class, 'AdminUpdateChangePassword'])->name('update.change.password');
+
+
 
 });
 
@@ -207,8 +211,19 @@ Route::prefix('client')->group(function(){
 // Frontend Product Details Page url 
 Route::get('/services/details/{id}/{slug}', [IndexController::class, 'ServicesDetails']);
 
+// Frontend SubCategory wise Data
+Route::get('/services/subcategory/{subcat_id}/{slug}', [IndexController::class, 'SubCatWiseServices']);
+
 // Frontend Sub-SubCategory wise Data
 Route::get('/childcategory/services/{childcat_id}/{slug}', [IndexController::class, 'ChildCatWiseServices']);
+
+
+// contact
+Route::get('contact/page', [ContactController::class, 'Contact'])->name('contact-page');
+Route::post('contact/form', [ContactController::class, 'ContactForm'])->name('contact-form');
+Route::get('admin/all/message', [ContactController::class, 'AdminAllMessage'])->name('all-message');
+
+Route::get('contact/us', [ContactUsController::class, 'ContactUs'])->name('contact-us');
 
      
 

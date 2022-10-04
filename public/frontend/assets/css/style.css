@@ -162,7 +162,7 @@ margin: 0 20px 0 0;}
 .custom-nav .nav-list li.rpdropdown{position: relative;}
 .custom-nav .nav-list li a.menu-links{
 font-size: 16px;
-color: #fff;
+color: #000;
 font-family: 'Poppins', sans-serif;
 font-weight: 500;
 padding: 0px 15px;
@@ -3584,7 +3584,7 @@ a.smllbtnn {    line-height: 45px;    color: #fff;    border-radius: 8px;    pad
   .hero-slider .slide-inner:before{
 	content: "";
     position: absolute;
-    background: #000;
+    background: #fff;
     width: 100%;
     height: 100%;
     opacity: 0.30;
@@ -3659,14 +3659,14 @@ a.smllbtnn {    line-height: 45px;    color: #fff;    border-radius: 8px;    pad
   .hero-style .slide-title h2 {
 	font-size: 60px;	
 	line-height: 70px;
-	color: #ffffff;
+	color: #0e7cd9;
 	margin: 0 0 20px;	
 	transition:all .4s ease;	
   }  
   .hero-style .slide-text p {
 	font-size: 20px;
     letter-spacing: normal;
-    color: #ffffff;
+    color: #000;
     margin: 0 0 30px;
     transition: all .4s ease;
   }  

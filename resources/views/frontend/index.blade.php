@@ -4,7 +4,14 @@
 Technoval BD
 @endsection
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
 <body>
+
+
+
+</section>
 <section class="hero-slider hero-style" >
 	  <div id="particles-js">
          <div class="swiper-container">
@@ -12,7 +19,7 @@ Technoval BD
              <div class="swiper-wrapper">  
                 <!--slider 1 start -->
                <div class="swiper-slide">
-                   <div class="slide-inner slide-bg-image" data-background="{{ asset('frontend/assets/images/shape/shape-dg-2.png')}}">
+                   <div class="slide-inner slide-bg-image" >
                       <div class="container">
                          <div data-swiper-parallax="300" class="slide-title">
                             <h2>Software Development</h2>
@@ -21,16 +28,14 @@ Technoval BD
                            <p>The perfect resource for beginner-to-advanced digital marketers looking to learn new skills or hone existing ones</p>
                          </div>
                          <div class="clearfix"></div>
-                         <div data-swiper-parallax="500" class="slide-btns">
-                           <a href="#" class="btn-main bg-btn lnk">View Showcase <i class="fas fa-chevron-right fa-icon"></i><span class="circle"></span></a>
-                         </div>
+                        
                       </div>
                    </div>                 
                 </div>
                    <!--slider 1 end -->               
                   <!--slider 2 start -->
                 <div class="swiper-slide">
-                   <div class="slide-inner slide-bg-image" data-background="{{ asset('frontend/assets/images/shape/shape-dg-2.png')}}">
+                   <div class="slide-inner slide-bg-image" ">
                       <div class="container">
                          <div data-swiper-parallax="300" class="slide-title">
                             <h2>Digital Marketing</h2>
@@ -39,16 +44,14 @@ Technoval BD
                            <p>The perfect resource for beginner-to-advanced digital marketers looking to learn new skills or hone existing ones</p>
                          </div>
                          <div class="clearfix"></div>
-                         <div data-swiper-parallax="500" class="slide-btns">
-                           <a href="#" class="btn-main bg-btn lnk">View Showcase <i class="fas fa-chevron-right fa-icon"></i><span class="circle"></span></a>
-                         </div>
+                        
                       </div>
                    </div>                 
                 </div>
                    <!--slider 2 end --> 
 				<!--slider 3 start -->
                 <div class="swiper-slide">
-                   <div class="slide-inner slide-bg-image" data-background="{{ asset('frontend/assets/images/shape/shape-dg-2.png')}}">
+                   <div class="slide-inner slide-bg-image">
                       <div class="container">
                          <div data-swiper-parallax="300" class="slide-title">
                             <h2>Website Design & Development</h2>
@@ -57,9 +60,7 @@ Technoval BD
                            <p>Our web experiences are high-performing, feature-packed and digitally transformative, designed to be user-friendly, fully functional, very secure and able to scale as your enterprise grows. </p>
                          </div>
                          <div class="clearfix"></div>
-                         <div data-swiper-parallax="500" class="slide-btns">
-                           <a href="#" class="btn-main bg-btn lnk">View Showcase <i class="fas fa-chevron-right fa-icon"></i><span class="circle"></span></a>
-                         </div>
+                         
                       </div>
                    </div>                 
                 </div>
@@ -169,10 +170,11 @@ Technoval BD
 				<div class="col-lg-3 col-sm-6 mt30 wow fadeInUp" data-wow-delay=".6s">
 					<div class="s-block up-hor pt20">
 						<div class="nn-card-set">
+						<a href="{{ url('services/details/'.$item->id.'/'.$item->content_title ) }}">
 							<div class="card-icon"><img src="{{ asset($item->thamble) }}" alt="service" class="img-fluid" /></div>
 							<h4>{{ $item->content_title}}</h4>
 							
-							<a href="{{ url('services/details/'.$item->id.'/'.$item->content_title ) }}">Learn More <i class="fas fa-chevron-right fa-icon"></i></a>
+							Learn More <i class="fas fa-chevron-right fa-icon"></i></a>
 						</div>
 					</div>
 				</div>

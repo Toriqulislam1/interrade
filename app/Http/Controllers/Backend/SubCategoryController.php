@@ -62,7 +62,7 @@ class SubCategoryController extends Controller
     	$subcat_id = $request->id;
 
     	 SubCategory::findOrFail($subcat_id)->update([
-		'category_id' => $request->category_id,
+		
 		'subcategory_name' => $request->subcategory_name,
 		'subcategory_slug' => strtolower(str_replace(' ', '-',$request->subcategory_name)),
         'created_at' => Carbon::now(),
@@ -115,7 +115,7 @@ class SubCategoryController extends Controller
 
     public function GetChildCategory($subcategory_id){
 
-        $childcat = ChildCategory::where('subcategory_id',$subcategory_id)->orderBy('childcategory_name','ASC')->get();
+        $childcat = Childcategory::where('subcategory_id',$subcategory_id)->orderBy('childcategory_name','ASC')->get();
         return json_encode($childcat);
      }
 
