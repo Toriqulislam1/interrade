@@ -27,7 +27,7 @@
 
 						@foreach($categories as $category)
 						 <li class="sbmenu">
-							<a href="#services" class="menu-links">{{ $category->category_name}}</a>
+							<a href="{{ route('all-services')}}" class="menu-links">{{ $category->category_name}}</a>
 							<div class="nx-dropdown">
 							   <div class="sub-menu-section">
 								  <div class="container">
@@ -77,6 +77,16 @@
 						 @endforeach
 						 <li class="sbmenu">
 							<a href="{{ route('contact-us')}}" class="menu-links">CONTACT US</a>
+							<div class="nx-dropdown">
+							   
+						 </li>
+						 <li class="sbmenu">
+							<a href="{{ route('all-clients')}}" class="menu-links">CLIENTS</a>
+							<div class="nx-dropdown">
+							   
+						 </li>
+						 <li class="sbmenu">
+							<a href="{{ route('all-portfolios')}}" class="menu-links">PORTFOLIOS</a>
 							<div class="nx-dropdown">
 							   
 						 </li>

@@ -2234,7 +2234,7 @@ background-clip: text;
 color: transparent;}
 .hero-heading-sec2 > p {color: #fff000; font-size: 18px; margin: 40px 0; }
 .wide-sblock {display: inline-flex; text-align: left; padding: 30px 20px; }
-.img100w {max-width: 100% !important; width: auto !important;}
+.img100w {max-width: 100% !important; width: auto !important; height:100px !important;}
 .funfct {
 box-shadow: 0 11px 20px rgb(123 149 162 / 15%);
 line-height: 26px;

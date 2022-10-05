@@ -78,75 +78,30 @@ Technoval BD
       </section>
 	
       <!--End Hero Slider-->
+
 	  
-	  <!--Start About-->
-		<section class="about-sec-app pad-tb pt60 dark-bg2" id="about">
+		<!--End Hero-->
+
+		@php
+$clients = App\Models\Client::orderBy('id','desc')->get();
+@endphp
+	<div class="container">
+		
+		<div class="weworkfor pt20 pb20 dark-bg2">
 			<div class="container">
-				<div class="row">
-					<div class="col-lg-6">
-						<div class="common-heading text-l">
-							<h2 class="mb30"><span class="text-second text-bold">Technoval</span> Opening Doors to New ideas
-</h2>
-							<!--p>Lorem Ipsum is text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p-->
-							<!--p class="mt10"> <span class="text-bold">Lorem Ipsumis simply dummy text of the printing and typesetting industry. Simply dummy text of the printing and typesetting industry. </span></p-->
-						</div>
-						<div class="cta-card mt40">
-							<h3 class="mb30">Let's Start a New Project Together</h3>
-							<a href="#" class="btn-outline lnk">Request A Quote<i class="fas fa-chevron-right fa-icon"></i><span class="circle"></span></a>
-						</div>
-					</div>
-					<div class="col-lg-6">
-						<div class="funfact">
-							<div class="row">
-								<div class="col-lg-4 col-md-6 col-sm-12 col-6">
-									<div class="funfct srcl1">
-										<img src="{{ asset('frontend/assets/images/icons/startup.svg')}}" alt="niwax app development template">
-										<span class="services-cuntr counter">12</span><span class="services-cuntr">+</span>
-										<p>Years Experience</p>
-									</div>
-								</div>
-								<div class="col-lg-4 col-md-6 col-sm-12 col-6">
-									<div class="funfct srcl2">
-										<img src="{{ asset('frontend/assets/images/icons/team.svg')}}" alt="niwax app development template">
-										<span class="services-cuntr counter">50</span><span class="services-cuntr">+</span>
-										<p>Talented Squad</p>
-									</div>
-								</div>
-								<div class="col-lg-4 col-md-6 col-sm-12 col-6">
-									<div class="funfct srcl3">
-										<img src="{{ asset('frontend/assets/images/icons/mobile.svg')}}" alt="niwax app development template">
-										<span class="services-cuntr counter">50</span><span class="services-cuntr">+</span>
-										<p>App Developed</p>
-									</div>
-								</div>
-								<div class="col-lg-4 col-md-6 col-sm-12 col-6">
-									<div class="funfct srcl4">
-										<img src="{{ asset('frontend/assets/images/icons/computers.svg')}}" alt="niwax app development template">
-										<span class="services-cuntr counter">100</span><span class="services-cuntr">%</span>
-										<p>Projects Delivered</p>
-									</div>
-								</div>
-								<div class="col-lg-4 col-md-6 col-sm-12 col-6">
-									<div class="funfct srcl5">
-										<img src="{{ asset('frontend/assets/images/icons/world.svg')}}" alt="niwax app development template">
-										<span class="services-cuntr counter">10</span><span class="services-cuntr">+</span>
-										<p>Countries Served</p>
-									</div>
-								</div>
-								<div class="col-lg-4 col-md-6 col-sm-12 col-6">
-									<div class="funfct srcl1">
-										<img src="{{ asset('frontend/assets/images/icons/deal.svg')}}" alt="niwax app development template">
-										<span class="services-cuntr counter">100</span><span class="services-cuntr">%</span>
-										<p>Client Satisfaction</p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
+			
+				<div class="logo-weworkfor owl-carousel">
+				@foreach($clients as $item)
+					<div class="items"><img src="{{ asset($item->client_logo)}}" alt="clients" class="img100w"></div>
+					@endforeach
 				</div>
+				
 			</div>
-		</section>
-		<!--End About-->
+		</div>
+	
+		</div>
+	  
+	 
 	  
 	<!--Start Service-->
 	<section class="dg-service2 pb120 pt0" id="services">
@@ -163,7 +118,7 @@ Technoval BD
 			<div class="row upset ">
 			
 			@php
-		$services = App\Models\Services::orderBy('content_title','desc')->get();
+		$services = App\Models\Services::orderBy('content_title','desc')->limit(8)->get();
 		@endphp
 
 			@foreach($services as $item)
@@ -184,7 +139,7 @@ Technoval BD
 		</div>
 		<div class="row">
         <div class="col-lg-12 maga-btn mt60">
-          <a href="javascript:void(0)" class="btn-outline">View More Services<i class="fas fa-chevron-right fa-icon"></i></a>
+          <a href="{{route('all-services')}}" class="btn-outline">View More Services<i class="fas fa-chevron-right fa-icon"></i></a>
         </div>
       </div>
 	</section>
@@ -367,40 +322,9 @@ $portfolios = App\Models\Portfolio::orderBy('id','desc')->get();
 			</div>
 		</section>
 		<!--End Portfolio-->
-	<!--Start Clients-->
-		<section class="clients-section-app pad-tb" id="clients">
-			<div class="container">
-				<div class="row justify-content-center">
-					<div class="col-lg-8">
-						<div class="common-heading text-w">
-							<span>Our happy customers</span>
-							<h2 class="mb30" style="color:black;">Some of our Clients</h2>
-						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-lg-12">
-						<div class="client-logoset">
-							<ul class="row text-center clearfix apppg">
+	
 
-@php
-$clients = App\Models\Client::orderBy('id','desc')->get();
-@endphp
-
-							@foreach($clients as $item)
-							<li class="col-lg-2 col-md-3 col-sm-4 col-6 mt30 wow fadeIn" data-wow-delay=".6s">
-									<div class="brand-logo hoshd"><img src="{{ asset($item->client_logo)}}" alt="clients" class="img-fluid"></div>
-									<p>{{ $item->client_title}}</p>
-							</li>
-								@endforeach
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		<!--End Clients-->
-		
+	
 		<!--Start work-category-->
 		<section class="work-category pad-tb">
 			<div class="container">

@@ -39,7 +39,7 @@
 <div class="col-lg-4 col-sm-6">
 <h5 class="mb30 mt30">Company</h5>
 <ul class="footer-address-list link-hover">
-<li><a href="contact.html" target="_blank">Contact</a></li>
+<li><a href="{{ route('contact-us')}}" target="_blank">Contact</a></li>
 
 
 <li><a href="javascript:void(0)">Privacy Policy</a></li>
@@ -57,9 +57,8 @@
 </div>
 <div class="col-lg-6">
 <ul class="footer-link-- link-hover">
-<li><a href="#">Privace &amp; Policy.</a></li>
-<li><a href="faq.html">Faq.</a></li>
-<li><a href="#">Terms.</a></li>
+<li><a href="#">Development BY Technoval Team</a></li>
+
 </ul>
 </div>
 </div>

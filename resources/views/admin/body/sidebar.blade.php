@@ -85,6 +85,20 @@
             <li><a href="{{ route('all.childcategory')}}"><i class="ti-more"></i>Child Category</a></li>
           </ul>
         </li>
+
+        <li class="treeview">
+          <a href="#">
+            <i data-feather="message-circle"></i>
+            <span>Company profile</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-right pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="#"><i class="ti-more"></i>Create</a></li>
+            <li><a href="#"><i class="ti-more"></i>All Blog</a></li>
+          </ul>
+        </li> 
 		 
 
 				  		  

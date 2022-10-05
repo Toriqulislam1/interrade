@@ -223,7 +223,13 @@ Route::get('contact/page', [ContactController::class, 'Contact'])->name('contact
 Route::post('contact/form', [ContactController::class, 'ContactForm'])->name('contact-form');
 Route::get('admin/all/message', [ContactController::class, 'AdminAllMessage'])->name('all-message');
 
+// contact us
 Route::get('contact/us', [ContactUsController::class, 'ContactUs'])->name('contact-us');
+
+ // view all main cat
+Route::get('all/client', [ContactUsController::class, 'AllClients'])->name('all-clients');
+Route::get('all/portfolios', [ContactUsController::class, 'AllPortfolios'])->name('all-portfolios');
+Route::get('all/services', [ContactUsController::class, 'AllServices'])->name('all-services');
 
      
 
