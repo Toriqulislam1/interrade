@@ -34,8 +34,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#"><i class="ti-more"></i>Create</a></li>
-            <li><a href="#"><i class="ti-more"></i>All Blog</a></li>
+            <li><a href="{{ route('blog-add')}}"><i class="ti-more"></i>Create</a></li>
+            <li><a href="{{ route('blog-manage')}}"><i class="ti-more"></i>All Blog</a></li>
           </ul>
         </li> 
 		  
@@ -95,7 +95,10 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#"><i class="ti-more"></i>Create</a></li>
+            <li><a href="{{ route('policy-add')}}"><i class="ti-more"></i>Add Policy</a></li>
+            <li><a href="{{ route('policy-manage')}}"><i class="ti-more"></i>Manage Policy</a></li>
+            <li><a href="{{ route('terms-add')}}"><i class="ti-more"></i>Add Terms</a></li>
+            <li><a href="{{ route('terms-manage')}}"><i class="ti-more"></i>Manage Terms</a></li>
             <li><a href="#"><i class="ti-more"></i>All Blog</a></li>
           </ul>
         </li> 

@@ -13,7 +13,9 @@ use App\Http\Controllers\Backend\GalleryController;
 use App\Http\Controllers\Backend\PortfolioController;
 use App\Http\Controllers\Backend\ClientController;
 use App\Http\Controllers\Backend\ContactController;
+use App\Http\Controllers\Backend\BlogController;
 use App\Http\Controllers\Frontend\ContactUsController;
+use App\Http\Controllers\Backend\PolicyController;
 
 
 
@@ -230,6 +232,56 @@ Route::get('contact/us', [ContactUsController::class, 'ContactUs'])->name('conta
 Route::get('all/client', [ContactUsController::class, 'AllClients'])->name('all-clients');
 Route::get('all/portfolios', [ContactUsController::class, 'AllPortfolios'])->name('all-portfolios');
 Route::get('all/services', [ContactUsController::class, 'AllServices'])->name('all-services');
+
+ 
+// blog
+Route::get('blog/add', [BlogController::class, 'BlogAdd'])->name('blog-add');
+
+Route::post('blog/store', [BlogController::class, 'BlogStore'])->name('blog-store');
+
+Route::get('blog/manage', [BlogController::class, 'BlogManage'])->name('blog-manage');
+
+Route::get('blog/edit/{id}', [BlogController::class, 'BlogEdit'])->name('blog-edit');
+
+Route::post('blog/update/', [BlogController::class, 'BlogUpdate'])->name('blog-update');
+
+Route::get('blog/delete/{id}', [BlogController::class, 'BlogDelete'])->name('blog-delete');
+
+Route::get('blog/inactive/{id}', [BlogController::class, 'BlogInactive'])->name('blog.inactive');
+
+Route::get('blog/active/{id}', [BlogController::class, 'BlogActive'])->name('blog.active');
+
+
+
+
+// policy
+Route::get('policy/add', [PolicyController::class, 'PolicyAdd'])->name('policy-add');
+
+Route::post('policy/store', [PolicyController::class, 'PolicyStore'])->name('policy-store');
+
+Route::get('policy/manage', [PolicyController::class, 'PolicyManage'])->name('policy-manage');
+
+Route::get('policy/edit/{id}', [PolicyController::class, 'PolicyEdit'])->name('policy-edit');
+
+Route::post('policy/update/', [PolicyController::class, 'PolicyUpdate'])->name('policy-update');
+
+Route::get('policy/delete/{id}', [PolicyController::class, 'PolicyDelete'])->name('policy-delete');
+
+
+// terms
+Route::get('terms/add', [PolicyController::class, 'TermsAdd'])->name('terms-add');
+
+Route::post('terms/store', [PolicyController::class, 'TermsStore'])->name('terms-store');
+
+Route::get('terms/manage', [PolicyController::class, 'TermsManage'])->name('terms-manage');
+
+Route::get('terms/edit/{id}', [PolicyController::class, 'TermsEdit'])->name('terms-edit');
+
+Route::post('terms/update/', [PolicyController::class, 'TermsUpdate'])->name('terms-update');
+
+Route::get('policy/delete/{id}', [PolicyController::class, 'PolicyDelete'])->name('policy-delete');
+
+
 
      
 
