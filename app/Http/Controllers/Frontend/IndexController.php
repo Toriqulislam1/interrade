@@ -21,7 +21,8 @@ class IndexController extends Controller
         $services = Services::where('status',1)->orderBy('id','DESC')->limit(8)->get();
         $categories = Category::orderBy('category_name','ASC')->get();
 		$subcategory = subcategory::orderBy('subcategory_name','ASC')->get();
-        view('frontend.index',compact('services','categories','subcategory'));
+		$blogs = Blog::where('status',1)->orderBy('id','DESC')->limit(8)->get();
+        view('frontend.index',compact('services','categories','subcategory','blogs'));
     }
 
 
@@ -32,6 +33,12 @@ class IndexController extends Controller
 
 		$cat_id = $services->category_id;
 	 	return view('frontend.services.service_details',compact('services'));
+
+	}
+
+	public function ViewBlog($id){
+		$blogs = Blog::findOrFail($id);
+	 	return view('frontend.blog.blog_view',compact('blogs'));
 
 	}
 

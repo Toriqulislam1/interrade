@@ -90,6 +90,11 @@
 							<div class="nx-dropdown">
 							   
 						 </li>
+						 <!--li class="sbmenu">
+							<a href="{{ route('all-blog')}}" class="menu-links">BLOGS</a>
+							<div class="nx-dropdown">
+							   
+						 </li-->
 						
 						 <li><a href="get-quote.html" class="btn-br bg-btn5 btshad-b2 lnk" data-bs-toggle="modal" data-bs-target="#menu-popup">Request A Quote <span class="circle"></span></a> </li>
               </ul>
@@ -115,45 +120,81 @@
 				<nav id="main-nav">
 				   <ul class="first-nav">
 					  <li>
-						 <a href="#">HOME</a>
+					  <a href="{{ url('/')}}" class="menu-links">HOME</a>
 						
 					  </li>
-					  <li>
-						 <a href="#">ABOUT</a>
-					
-					  </li>
-					  <li>
-						 <a href="#">SERVICES</a>
-						 <ul>
-							<li><a href="pricing.html">Pricing</a></li>
-							<li><a href="typography.html">Typography</a></li>
-							<li><a href="button.html">Buttons</a></li>
+					  <!--   // Get Category Table Data -->
+		@php
+		$categories = App\Models\Category::orderBy('category_name','DESC')->get();
+		@endphp
+
+
+						@foreach($categories as $category)
+						 <li class="sbmenu">
+							<a href="{{ route('all-services')}}" class="menu-links">{{ $category->category_name}}</a>
+							<div class="nx-dropdown">
+							   <div class="sub-menu-section">
+								  <div class="container">
+									 <div class="sub-menu-center-block">
+
+
+									 @php
+							$subcategories = App\Models\SubCategory::where('category_id',$category->id)->orderBy('subcategory_name','DESC')->get();
+							@endphp
+
+							@foreach($subcategories as $subcategory)
+
+							<div class="sub-menu-column">
 							
-						 </ul>
-					  </li>
-					  <li>
-						 <a href="#">PORTFOLIO</a>
-						 <ul>
-							<li><a href="portfolio.html">Portfolio Grid 1</a> </li>
-							<li><a href="portfolio-2.html">Portfolio Grid 2</a> </li>
+						<a href="{{ url('/services/subcategory/'.$subcategory->id.'/'.$subcategory->subcategory_slug) }}">
+							<div class="menuheading">{{ $subcategory->subcategory_name}}</div> </a>
+
+
+
+							<!--   // Get SubCategory Table Data -->
+							@php
+							$childcategories = App\Models\ChildCategory::where('subcategory_id',$subcategory->id)->orderBy('childcategory_name','DESC')->get();
+							@endphp
+										
+							@foreach($childcategories as $childcategory)
+
 							
-						 </ul>
-					  </li>
-					  <li>
-						 <a href="#">CLIENT</a>
-						 <ul>
-							<li><a href="blog-grid-1.html">Blog Grid 1</a> </li>
-							<li><a href="blog-grid-2.html">Blog Grid 2</a> </li>
-							
-						 </ul>
-					  </li>
-					   <li>
-						 <a href="#">Blog</a>
-						 <ul>
-							<li><a href="blog-grid-1.html">Blog Grid 1</a> </li>
-							<li><a href="blog-grid-2.html">Blog Grid 2</a> </li>
-							
-						 </ul>
+									<ul>
+
+
+
+									  <li><a href="{{ url('/childcategory/services/'.$childcategory->id.'/'.$childcategory->childcategory_slug) }}">{{ $childcategory->childcategory_name}}</a></li>
+									    
+									</ul>
+									@endforeach
+							</div>
+
+							@endforeach
+										
+									
+									 </div>
+								  </div>
+							   </div>
+							</div>
+						 </li>
+						
+						 @endforeach
+						 
+						 <li class="sbmenu">
+							<a href="{{ route('contact-us')}}" class="menu-links">CONTACT US</a>
+							<div class="nx-dropdown">
+							   
+						 </li>
+						 <li class="sbmenu">
+							<a href="{{ route('all-clients')}}" class="menu-links">CLIENTS</a>
+							<div class="nx-dropdown">
+							   
+						 </li>
+						 <li class="sbmenu">
+							<a href="{{ route('all-portfolios')}}" class="menu-links">PORTFOLIOS</a>
+							<div class="nx-dropdown">
+							   
+						 </li>
 					  </li>
 				   </ul>
 				   <ul class="bottom-nav">

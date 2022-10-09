@@ -109,8 +109,8 @@ $clients = App\Models\Client::orderBy('id','desc')->get();
 		<div class="row justify-content-center">
 							<div class="col-lg-6">
 								<div class="common-heading ptag">
-									<span>Service</span>
-									<h2>Our Services</h2>
+									
+									<h2>Services We Offer</h2>
 									
 								</div>
 							</div>
@@ -152,15 +152,15 @@ $clients = App\Models\Client::orderBy('id','desc')->get();
 <div class="row justify-content-center ">
 <div class="col-lg-8">
 <div class="common-heading-2">
-	<span class="text-effect-1">Photo gallery</span>
-	<h2 class="mb0">Some of photos</h2>
+	
+	<h2 class="mb0">Our Latest Creative Work</h2>
 </div>
 </div>
 </div>
 <div class="row">
 	
 @php
-$gallery = App\Models\Gallery::orderBy('id','desc')->get();
+$gallery = App\Models\Gallery::orderBy('id','desc')->limit(12)->get();
 @endphp
 
 
@@ -194,7 +194,7 @@ $gallery = App\Models\Gallery::orderBy('id','desc')->get();
 				<div class="row">
 					<div class="col-lg-6">
 						<div class="common-heading text-l">
-							<span>Why Choose Us</span>
+							<span style="color:black"><strong>Why Choose Us</strong></span>
 							<h2 class="mb20">Why The Technoval <span class="text-second text-bold">Ranked Top</span> Among The Leading IT Companies</h2>
 							
 							<div class="itm-media-object mt40 tilt-3d">
@@ -230,13 +230,9 @@ $gallery = App\Models\Gallery::orderBy('id','desc')->get();
 						</div>
 					</div>
 					<div class="col-lg-6">
-						<div  data-tilt data-tilt-max="5" data-tilt-speed="1000" class="single-image bg-shape-dez wow fadeIn" data-wow-duration="2s"><img src="{{ asset('frontend/assets/images/about/about-company.jpg')}}" alt="image" class="img-fluid"></div>
+						<div  data-tilt data-tilt-max="5" data-tilt-speed="1000" class="single-image bg-shape-dez wow fadeIn" data-wow-duration="2s"><img src="{{ asset('frontend/assets/images/icons/why-choose-us.png')}}" alt="image" class="img-fluid"></div>
 						<!--p class="text-center mt30">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p-->
-						<div class="cta-card mt60 text-center">
-							<h3 class="mb20">Let's Start a  <span class="text-second text-bold">New Project</span> Together</h3>
-							
-							<a href="#" class="btn-outline lnk mt30">Request A Quote    <i class="fas fa-chevron-right fa-icon"></i><span class="circle"></span></a>
-						</div>
+						
 					</div>
 				</div>
 			</div>
@@ -254,24 +250,24 @@ c237.6,5.7,475.3,3.1,712.7-7.7c164.2-7.5,328.1-23.7,492.3-31c0.7,0,15.2-0.5,15.2
 <div class="row">
 <div class="col-lg-6 v-center">
 <div class="common-heading-2 text-l">
-<span class="text-effect-1">About Us</span>
+<span class="text-effect-1"><strong><h4>About Us</h4></strong></span>
 <h2 class="mb20">Work Together For Success</h2>
 <p>Established in 2016 under the private limited company act of Bangladesh with an aim to serve globally. Technoval already achieved the trust of different clients from different regions on serving quality services in terms of time and cost and has a strong belief to provide better and better services in the coming days.</p>
+</div>
+<div class="common-heading-2 text-l">
+<span class="text-effect-1"></span>
+<h2 class="mb20">Company History</h2>
+<p>The company was first established back in 2016 as a sole proprietorship under the name Cortex. In 2022 we changed our name to Technoval Limited when the company was incorporated and licensed as a private limited company.<br>
+In 2016 we began our venture as just a digital marketing company. Since then we have evolved into a broad multi service provider offering an integrated mix of market development strategies,business analytics, software solutions with state-of-the-art technology through innovation via various media outlets to help drive growth to all businesses all through-out the country.<br> 
+Technoval Limited is a true marketing company supported by a world class team to help provide any and all kinds of digital business solutions to all companies in all sectors in Bangladesh.
+</p>
 </div>
 </div>
 <div class="col-lg-6 v-center">
 <img src="{{ asset('frontend/assets/images/about/about-07-final.png')}}" alt="img" class="img-fluid">
 </div>
-<div class="col-lg-6 v-center mt40 order2">
-<img src="{{ asset('frontend/assets/images/about/home-image-03-final.jpg')}}" alt="img" class="img-fluid">
-</div>
-<div class="col-lg-6 v-center mt40 order1">
-<div class="common-heading-2 text-l">
-<span class="text-effect-1">We Are Creative Agency</span>
-<h2 class="mb20">We Craft Beautiful Digital Experiences</h2>
-<p>Tecnoval evolved from a local digital-first marketing company to offering an integrated mix of strategy, analytics, creativity, technology, media and experience to drive meaningful innovation in communication through multi-country presence. With one of the largest client portfolios, Tecnoval is a true integrated marketing company empowered by a world class technology team able to offer any solution for any brand across different media.</p>
-</div>
-</div>
+
+
 </div>
 </div>
 <div class="bottom-curvs">
@@ -290,8 +286,8 @@ c237.6-5.7,475.3-3.1,712.7,7.7c164.2,7.5,328.1,23.7,492.3,31c0.7,0,15.2,0.5,15.2
 				<div class="row justify-content-center ">
 					<div class="col-lg-8">
 						<div class="common-heading">
-							<span>Our Work</span>
-							<h2 class="mb20">Our Latest Creative Work</h2>
+							
+							<h2 class="mb20">Our Portfolio</h2>
 						</div>
 					</div>
 				</div>

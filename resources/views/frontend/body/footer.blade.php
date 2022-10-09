@@ -42,8 +42,8 @@
 <li><a href="{{ route('contact-us')}}" target="_blank">Contact</a></li>
 
 
-<li><a href="javascript:void(0)">Privacy Policy</a></li>
-<li><a href="javascript:void(0)">Terms and Conditions</a></li>
+<li><a href="{{ route('privacy-view')}}">Privacy Policy</a></li>
+<li><a href="{{ route('terms-view')}}">Terms and Conditions</a></li>
 
 </ul>
 </div>

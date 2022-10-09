@@ -50,7 +50,7 @@
 		<td><img src="{{ asset($item->blog_photo) }}" style="width: 60px; height: 50px;"></td>
         <td>{{ $item->blog_title }}</td>
 		
-        <td>{{ $item->blog_description }}</td>
+        <td>{!! $item->blog_description !!}</td>
 		<td>
 		@if($item->status == 1)
 		 	<span class="badge badge-pill badge-success"> Active </span>

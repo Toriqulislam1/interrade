@@ -47,7 +47,7 @@
 <div class="col-lg-8 block-1">
 <div class="common-heading text-l pl25">
   <span>Details</span>
-  <p>{{ $services->long_descrip}}</p>
+  <p>{!! $services->long_descrip !!}</p>
   
 </div>
 </div>

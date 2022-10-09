@@ -233,6 +233,13 @@ Route::get('all/client', [ContactUsController::class, 'AllClients'])->name('all-
 Route::get('all/portfolios', [ContactUsController::class, 'AllPortfolios'])->name('all-portfolios');
 Route::get('all/services', [ContactUsController::class, 'AllServices'])->name('all-services');
 
+// blog index
+Route::get('all/blog', [ContactUsController::class, 'AllBlog'])->name('all-blog');
+Route::get('view/blog{id}', [IndexController::class, 'ViewBlog'])->name('view-blog');
+
+//privacy
+Route::get('privacy/view', [ContactUsController::class, 'PrivacyView'])->name('privacy-view');
+Route::get('terms/view', [ContactUsController::class, 'TermsView'])->name('terms-view');
  
 // blog
 Route::get('blog/add', [BlogController::class, 'BlogAdd'])->name('blog-add');

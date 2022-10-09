@@ -53,7 +53,7 @@ Technoval BD
 											<div class="info-card v-center">
 												<span><i class="fas fa-phone-alt"></i> Phone:</span>
 												<div class="info-body">
-													<p>Assistance hours: Monday – Friday, 9 am to 5 pm</p>
+													<p>Assistance hours: Without Friday, 10 am to 7 pm</p>
 													<a href="tel:+8802223314131">+8802223314131</a>
 												</div>
 											</div>

@@ -21,5 +21,23 @@ class ContactUsController extends Controller
 
     public function AllServices(){
         return view('frontend.contact.all_services');
-    }
+    } //end
+
+    public function AllBlog(){
+        return view('frontend.blog.all_blog');
+    } //end
+
+    public function PrivacyView(){
+        return view('frontend.privacy.privacy_view');
+    } //end
+
+    public function TermsView(){
+        return view('frontend.privacy.terms_view');
+    } //end
+
+
+
+   
+
+   
 }
