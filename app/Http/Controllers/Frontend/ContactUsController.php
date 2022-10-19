@@ -35,6 +35,20 @@ class ContactUsController extends Controller
         return view('frontend.privacy.terms_view');
     } //end
 
+    public function AboutUs(){
+        return view('frontend.about.about_us');
+    } //end
+
+    public function TechnovalCareer(){
+        return view('frontend.career.technoval_career');
+    } //end
+
+    
+    public function DigitalMarketing(){
+        return view('frontend.marketing.digital_marketing');
+    } //end
+
+
 
 
    

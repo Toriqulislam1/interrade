@@ -25,7 +25,7 @@ Technoval BD
                             <h2>Software Development</h2>
                          </div>
                          <div data-swiper-parallax="400" class="slide-text">
-                           <p>The perfect resource for beginner-to-advanced digital marketers looking to learn new skills or hone existing ones</p>
+                           <p>We employ best practice processes and development methodologies as a foundation for rapid building of cutting-edge technology solutions in a structured and methodical way.</p>
                          </div>
                          <div class="clearfix"></div>
                         
@@ -238,6 +238,8 @@ $gallery = App\Models\Gallery::orderBy('id','desc')->limit(12)->get();
 			</div>
 		</section>
 		<!--End why choose-->
+
+		<!--About Us-->
 	
 	<section class="about-dg-busign pb120 pt120 bg-light-ylo upset" id="about">
 	<div class="up-curvs"><svg height="100" width="100%" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -252,7 +254,7 @@ c237.6,5.7,475.3,3.1,712.7-7.7c164.2-7.5,328.1-23.7,492.3-31c0.7,0,15.2-0.5,15.2
 <div class="common-heading-2 text-l">
 <span class="text-effect-1"><strong><h4>About Us</h4></strong></span>
 <h2 class="mb20">Work Together For Success</h2>
-<p>Established in 2016 under the private limited company act of Bangladesh with an aim to serve globally. Technoval already achieved the trust of different clients from different regions on serving quality services in terms of time and cost and has a strong belief to provide better and better services in the coming days.</p>
+<p>Tecnoval evolved from a local digital-first marketing company to offering an integrated mix of strategy, analytics, creativity, technology, media and experience to drive meaningful innovation in communication through multi-country presence. With one of the largest client portfolios, Tecnoval is a true integrated marketing company empowered by a world class technology team able to offer any solution for any brand across different media.</p>
 </div>
 <div class="common-heading-2 text-l">
 <span class="text-effect-1"></span>
@@ -278,6 +280,8 @@ c237.6-5.7,475.3-3.1,712.7,7.7c164.2,7.5,328.1,23.7,492.3,31c0.7,0,15.2,0.5,15.2
 </svg>
 </div>
 </section>
+
+<!--end About Us-->
 
 
 <!--Start Portfolio-->

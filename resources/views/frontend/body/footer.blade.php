@@ -40,8 +40,7 @@
 <h5 class="mb30 mt30">Company</h5>
 <ul class="footer-address-list link-hover">
 <li><a href="{{ route('contact-us')}}" target="_blank">Contact</a></li>
-
-
+<li><a href="{{ route('technoval-career')}}">Career</a></li>
 <li><a href="{{ route('privacy-view')}}">Privacy Policy</a></li>
 <li><a href="{{ route('terms-view')}}">Terms and Conditions</a></li>
 

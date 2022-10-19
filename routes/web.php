@@ -237,6 +237,15 @@ Route::get('all/services', [ContactUsController::class, 'AllServices'])->name('a
 Route::get('all/blog', [ContactUsController::class, 'AllBlog'])->name('all-blog');
 Route::get('view/blog{id}', [IndexController::class, 'ViewBlog'])->name('view-blog');
 
+// about us
+Route::get('about/us', [ContactUsController::class, 'AboutUs'])->name('about-us');
+
+// Career
+Route::get('technoval/career', [ContactUsController::class, 'TechnovalCareer'])->name('technoval-career');
+
+// digital marketing
+Route::get('digital/marketing', [ContactUsController::class, 'DigitalMarketing'])->name('digital-marketing');
+
 //privacy
 Route::get('privacy/view', [ContactUsController::class, 'PrivacyView'])->name('privacy-view');
 Route::get('terms/view', [ContactUsController::class, 'TermsView'])->name('terms-view');
