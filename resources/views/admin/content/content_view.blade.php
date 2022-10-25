@@ -30,7 +30,9 @@
 								<th>Service Photo </th>
 								<th>Service Title</th>
 								<th>Status </th>
+								<th>Views</th>
 								<th>Action</th>
+								
 								 
 							</tr>
 						</thead>
@@ -50,9 +52,10 @@
 		 	@endif
 
 		 </td>
+		 <td>{{ $item->views }}</td>
 
 
-		<td width="30%">
+		<td width="25%">
  
  <a href="{{ route('content.edit',$item->id) }}" class="btn btn-info" title="Edit Data"><i class="fa fa-pencil"></i> </a>
 
@@ -69,6 +72,7 @@
 
 
 		</td>
+	
 							 
 	 </tr>
 	  @endforeach

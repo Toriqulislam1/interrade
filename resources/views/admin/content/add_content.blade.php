@@ -24,7 +24,6 @@
   <form method="POST" action="{{ route('content-store') }}" enctype="multipart/form-data" >
 		 	@csrf
 
-		
 	<div class="row">
 	 <div class="col-12">	
 

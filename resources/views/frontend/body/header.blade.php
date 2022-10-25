@@ -1,7 +1,21 @@
 
 
 <!--Start Header -->
-<header class="nav-bg-w main-header navfix fixed-top menu-white">
+<div class="container-fluid">
+		<div class="row">
+		 <div class="topnav">
+		<ul>
+			  <li style="letter-spacing:1px" > <img src="{{ asset('frontend/assets/images/bd.png')}}"></i><strong>&nbsp;+8802-223314131</strong>
+			</li>
+			<li style="float: right;letter-spacing:0.5px"><marquee><strong>Stay with Technoval Technology</strong></marquee></li>
+		</ul>
+			 
+			
+			  
+		</div>
+	</div>
+</div>
+<header class="nav-bg-w main-header navfix navbar menu-white">
          <div class="container-fluid m-pad">
 
 				<div class="menu-header">
@@ -279,4 +293,19 @@
 </div>
 </div>
 </div>
+
+<script>
+window.onscroll = function() {myFunction()};
+
+var navbar = document.getElementById("navbar");
+var sticky = navbar.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+</script>
 <!--Mobile contact-->

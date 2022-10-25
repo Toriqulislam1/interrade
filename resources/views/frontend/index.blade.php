@@ -352,7 +352,61 @@ $portfolios = App\Models\Portfolio::orderBy('id','desc')->get();
 					<div class="col-lg-3 col-sm-6 col-6 wow fadeIn" data-wow-delay="2.3s"> <div class="industry-workfor hoshd"><img src="{{ asset('frontend/assets/images/icons/groceries.svg')}}" alt="img"> <h6>Grocery</h6> </div></div></div>
 				</div>
 			</section>
+		
 			<!--End  work-category-->
+
+			  <!--Start Blog Grid-->
+  <section class="blog-page pad-tb pt40">
+    <div class="container">
+      <div class="row">
+	  <div class="row justify-content-center">
+					<div class="col-lg-8">
+						<div class="common-heading ptag">
+							
+							<h2>Our latest News</h2>
+							
+						</div>
+					</div>
+				</div>
+	  @php
+$blogs = App\Models\Blog::orderBy('id','desc')->limit(4)->get();
+@endphp
+
+	  @foreach($blogs as $item)
+        <div class="col-lg-3 col-sm-6 single-card-item">
+          <div class="isotope_item hover-scale">
+            <div class="item-image">
+              <a href="{{ route('view-blog',$item->id) }}"><img src="{{ asset($item->blog_photo)}}" alt="blog" class="img-fluid"/> </a>
+             
+            </div>  
+            <div class="item-info blog-info">
+              <div class="entry-blog">
+               
+                <span class="posted-on">
+                <a href="#"><i class="fas fa-clock"></i>{{ Carbon\Carbon::parse($item->created_at)->diffForHumans()}}</a>
+                </span>
+                <span><a href="#"><i class="far fa-eye"></i>{{ $item->views}}</a></span>
+              </div>
+              <h4><a href="{{ route('view-blog',$item->id) }}">{{ $item->blog_title}}</a></h4>
+              <p>{!! Str::limit($item->blog_description, 50)  !!}</p>
+            </div>
+          </div>
+        </div>
+
+		@endforeach
+     
+     
+        
+      
+      </div>
+    </div>
+	<div class="row">
+        <div class="col-lg-12 maga-btn mt60">
+          <a href="{{route('all-blog')}}" class="btn-outline">View More News<i class="fas fa-chevron-right fa-icon"></i></a>
+        </div>
+      </div>
+  </section>
+  <!--End Blog Grid-->
 </body>
 
             @endsection

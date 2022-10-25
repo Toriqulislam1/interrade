@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Category;
-use App\Models\SubCategory;
+use App\Models\subcategory;
 use App\Models\Services;
 use Carbon\Carbon;
 use Image;
@@ -74,7 +74,7 @@ class ContentController extends Controller
 
 		
 		$categories = Category::latest()->get();
-		$subcategory = SubCategory::latest()->get();
+		$subcategory = subcategory::latest()->get();
 		$services = Services::findOrFail($id);
 		return view('admin.content.content_edit',compact('categories','subcategory','services'));
 

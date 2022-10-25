@@ -50,6 +50,43 @@
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
             font-size: 100px;
         }
+        .sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+.topnav {
+  overflow: hidden;
+  background-color: #fff;
+  height: 37px;
+}
+
+.topnav {
+  float: left;
+  color: #333;
+  text-align: left;
+  padding: 8px 6px;
+  text-decoration: none;
+  font-size: 15px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.topnav li:hover {
+  
+  color: blue;
+}
+
+.topnav a.active {
+  background-color: #fff;
+  color: white;
+}
+li {
+    display: inline-block;
+}
+ul {
+    list-style-type: none;
+}
+
     </style>
 	
  </head>

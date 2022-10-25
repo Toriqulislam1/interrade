@@ -13,6 +13,7 @@ use App\Models\Portfolio;
 use App\Models\Services;
 use App\Models\Childcategory;
 use App\Models\Contact;
+use App\Models\Blog;
 
 class IndexController extends Controller
 {
@@ -28,6 +29,7 @@ class IndexController extends Controller
 
 
     public function ServicesDetails($id,$slug){
+		Services::find($id)->increment('views');
 		$services = Services::findOrFail($id);
 
 
@@ -37,6 +39,7 @@ class IndexController extends Controller
 	}
 
 	public function ViewBlog($id){
+		Blog::find($id)->increment('views');
 		$blogs = Blog::findOrFail($id);
 	 	return view('frontend.blog.blog_view',compact('blogs'));
 
@@ -46,11 +49,7 @@ class IndexController extends Controller
 	public function SubCatWiseServices(Request $request, $subcat_id,$slug){
 		$services = Services::where('status',1)->where('subcategory_id',$subcat_id)->orderBy('id','DESC');
 		$categories = Category::orderBy('category_name','ASC')->get();
-
 		$breadsubcat = subcategory::with(['category'])->where('id',$subcat_id)->get();
-
-
-
 		return view('frontend.services.subcat_view',compact('services','categories','breadsubcat'));
 
 	}
@@ -62,8 +61,6 @@ class IndexController extends Controller
 		$services = Services::where('status',1)->where('childcategory_id',$childcat_id)->orderBy('id','DESC');
 		$categories = Category::orderBy('category_name','ASC')->get();
 		$subcategory = SubCategory::orderBy('subcategory_name','ASC')->get();
-		
-
 		$childcategory = Childcategory::with(['category','subcategory'])->where('id',$childcat_id)->get();
 
 		return view('frontend.services.child_view',compact('services','categories','childcategory'));

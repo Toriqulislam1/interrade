@@ -58,7 +58,7 @@
            <span class="badge badge-pill badge-danger"> InActive </span>
 		 	@endif
 		</td>
-		<td width="20%">
+		<td width="25%">
  <a href="{{ route('blog-edit',$item->id)}}" class="btn btn-info" title="Edit Data"><i class="fa fa-pencil"></i> </a>
 
  <a href="{{ route('blog-delete',$item->id)}}" class="btn btn-danger" title="Delete Data" id="delete">

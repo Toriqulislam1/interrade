@@ -16,6 +16,7 @@ use App\Http\Controllers\Backend\ContactController;
 use App\Http\Controllers\Backend\BlogController;
 use App\Http\Controllers\Frontend\ContactUsController;
 use App\Http\Controllers\Backend\PolicyController;
+use App\Http\Controllers\Backend\IndController;
 
 
 
@@ -297,6 +298,25 @@ Route::post('terms/update/', [PolicyController::class, 'TermsUpdate'])->name('te
 
 Route::get('policy/delete/{id}', [PolicyController::class, 'PolicyDelete'])->name('policy-delete');
 
+
+// Admin Client All Routes 
+
+Route::prefix('ind')->group(function(){
+
+    Route::get('/add', [IndController::class, 'AddInd'])->name('add-ind');
+
+    Route::post('/store', [IndController::class, 'StoreInd'])->name('store-ind');
+
+    Route::get('/manage', [IndController::class, 'ManageInd'])->name('manage-ind');
+
+    Route::get('/edit/{id}', [IndController::class, 'EditInd'])->name('edit-ind');
+
+    Route::post('/update', [IndController::class, 'IndUpdate'])->name('update-ind');
+
+    Route::get('/delete/{id}', [IndController::class, 'DeleteInd'])->name('delete-ind');
+
+
+});
 
 
      

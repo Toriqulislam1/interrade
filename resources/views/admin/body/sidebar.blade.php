@@ -67,6 +67,7 @@
             <li><a href="{{ route('add-gallery')}}"><i class="ti-more"></i>Gallery</a></li>
             <li><a href="{{ route('add-portfolio')}}"><i class="ti-more"></i>Portfolio</a></li>
             <li><a href="{{ route('add-client')}}"><i class="ti-more"></i>Client</a></li>
+            <li><a href="{{ route('add-ind')}}"><i class="ti-more"></i>Industries</a></li>
             
           </ul>
         </li> 

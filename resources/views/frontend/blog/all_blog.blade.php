@@ -17,7 +17,7 @@ $blogs = App\Models\Blog::orderBy('id','desc')->get();
 @endphp
         
 @foreach($blogs as $item)
-        <div class="col-lg-4 col-sm-6 single-card-item">
+        <div class="col-lg-3 col-sm-6 single-card-item">
           <div class="isotope_item hover-scale">
             <div class="item-image">
               <a href="#"><img src="{{ asset($item->blog_photo)}}" alt="blog" class="img-fluid"/> </a>
@@ -31,7 +31,7 @@ $blogs = App\Models\Blog::orderBy('id','desc')->get();
                 </span>
                 <span><a href="#"><i class="fas fa-comment-dots"></i> (23)</a></span>
               </div>
-              <h4><a href="{{ url('view/blog/'.$item->id.'/'.$item->blog_title ) }}">{{ $item->blog_title}}</a></h4>
+              <h4><a href="{{ route('view-blog',$item->id) }}">{{ $item->blog_title}}</a></h4>
               <p>{{ $item->description}}</p>
             </div>
           </div>

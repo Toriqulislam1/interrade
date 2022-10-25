@@ -1183,7 +1183,7 @@ background: -webkit-linear-gradient(-45deg, #ffdee9 0%,#c8fff4  100%);
 background: linear-gradient(135deg, #ffdee9 0%,#c8fff4  100%);}
 .breadcrumb-area:after{
 content: ''; z-index:0;
-background: url(../images/banner/contact.png);
+background: url(../images/banner/contact.jpg);
 background-size: auto;   position: absolute;   height: 100%;   width: 100%;   background-repeat: no-repeat;
 right: 0;   top: 0;   z-index: 1;   background-position: center right; background-size: contain;}
 .breadcrumb-area ul li {    display: block;    display: inline-block;}
@@ -1537,7 +1537,7 @@ text-align: center;}
 .posted-on{margin-right:10px;}
 .category-blog a{display: inline-block;  padding: 5px;  background: #fe409c;  color: #fff;}
 .image-set{ border-radius:8px; overflow:hidden;}
-.image-set img{width:100%;}
+.image-set img{width:80%;}
 .blog-header .user-image img {   border-radius: 100%;  width: 50px;}
 .blog-header .user-info {   font-family: 'Poppins', sans-serif;   margin: 0px 0 0 20px;}
 .postwatch{text-align: right;}
