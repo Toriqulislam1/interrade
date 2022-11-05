@@ -25,7 +25,7 @@ Technoval BD
                             <h2>Software Development</h2>
                          </div>
                          <div data-swiper-parallax="400" class="slide-text">
-                           <p>We employ best practice processes and development methodologies as a foundation for rapid building of cutting-edge technology solutions in a structured and methodical way.</p>
+                           <p>Our employee best practice processes and development methodologies as a foundation for rapid building of cutting-edge technology solutions in a structured and methodical way.</p>
                          </div>
                          <div class="clearfix"></div>
                         
@@ -127,7 +127,7 @@ $clients = App\Models\Client::orderBy('id','desc')->get();
 						<div class="nn-card-set">
 						<a href="{{ url('services/details/'.$item->id.'/'.$item->content_title ) }}">
 							<div class="card-icon"><img src="{{ asset($item->thamble) }}" alt="service" class="img-fluid" /></div>
-							<h4>{{ $item->content_title}}</h4>
+							<h6>{{ $item->content_title}}</h6>
 							
 							Learn More <i class="fas fa-chevron-right fa-icon"></i></a>
 						</div>
@@ -230,7 +230,7 @@ $gallery = App\Models\Gallery::orderBy('id','desc')->limit(12)->get();
 						</div>
 					</div>
 					<div class="col-lg-6">
-						<div  data-tilt data-tilt-max="5" data-tilt-speed="1000" class="single-image bg-shape-dez wow fadeIn" data-wow-duration="2s"><img src="{{ asset('frontend/assets/images/icons/why-choose-us.png')}}" alt="image" class="img-fluid"></div>
+						<div  data-tilt data-tilt-max="5" data-tilt-speed="1000" class="single-image  wow fadeIn" data-wow-duration="2s"><img src="{{ asset('frontend/assets/images/about/choose-us.png')}}" alt="image" class="img-fluid"></div>
 						<!--p class="text-center mt30">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p-->
 						
 					</div>
@@ -254,7 +254,7 @@ c237.6,5.7,475.3,3.1,712.7-7.7c164.2-7.5,328.1-23.7,492.3-31c0.7,0,15.2-0.5,15.2
 <div class="common-heading-2 text-l">
 <span class="text-effect-1"><strong><h4>About Us</h4></strong></span>
 <h2 class="mb20">Work Together For Success</h2>
-<p>Tecnoval evolved from a local digital-first marketing company to offering an integrated mix of strategy, analytics, creativity, technology, media and experience to drive meaningful innovation in communication through multi-country presence. With one of the largest client portfolios, Tecnoval is a true integrated marketing company empowered by a world class technology team able to offer any solution for any brand across different media.</p>
+<p>Technoval evolved from a local digital-first marketing company to offering an integrated mix of strategy, analytics, creativity, technology, media and experience to drive meaningful innovation in communication through multi-country presence. With one of the largest client portfolios, Tecnoval is a true integrated marketing company empowered by a world class technology team able to offer any solution for any brand across different media.</p>
 </div>
 <div class="common-heading-2 text-l">
 <span class="text-effect-1"></span>
@@ -266,7 +266,7 @@ Technoval Limited is a true marketing company supported by a world class team to
 </div>
 </div>
 <div class="col-lg-6 v-center">
-<img src="{{ asset('frontend/assets/images/about/about-07-final.png')}}" alt="img" class="img-fluid">
+<img src="{{ asset('frontend/assets/images/about/about-us.png')}}" alt="img" class="img-fluid">
 </div>
 
 
@@ -308,7 +308,7 @@ $portfolios = App\Models\Portfolio::orderBy('id','desc')->get();
 								<a href="#"><img src="{{ asset($item->port_image)}}" alt="image" class="img-fluid" /> </a>
 							</div>
 							<div class="item-info-div shdo">
-								<h4>{{ $item->port_title}}</h4>
+								<h6>{{ $item->port_title}}</h4>
 								<p>{{ $item->port_subtitle}}</p>
 							</div>
 						</div>
