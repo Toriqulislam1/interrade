@@ -122,7 +122,7 @@ $clients = App\Models\Client::orderBy('id','desc')->get();
 		@endphp
 
 			@foreach($services as $item)
-				<div class="col-lg-3 col-sm-6 mt30 wow fadeInUp" data-wow-delay=".6s">
+				<div class="col-3 col-sm-6 mt30 wow fadeInUp" data-wow-delay=".1s">
 					<div class="s-block up-hor pt20">
 						<div class="nn-card-set">
 						<a href="{{ url('services/details/'.$item->id.'/'.$item->content_title ) }}">

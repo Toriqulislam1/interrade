@@ -45,6 +45,7 @@
 							<div class="nx-dropdown">
 							   <div class="sub-menu-section">
 								  <div class="container">
+								  	<div class="col-md-12">
 									 <div class="sub-menu-center-block">
 
 
@@ -81,7 +82,7 @@
 
 							@endforeach
 										
-									
+									</div>
 									 </div>
 								  </div>
 							   </div>
