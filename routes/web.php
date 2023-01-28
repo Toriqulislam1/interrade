@@ -17,6 +17,7 @@ use App\Http\Controllers\Backend\BlogController;
 use App\Http\Controllers\Frontend\ContactUsController;
 use App\Http\Controllers\Backend\PolicyController;
 use App\Http\Controllers\Backend\IndController;
+use App\Http\Controllers\Backend\basicsettingController;
 
 
 
@@ -69,7 +70,7 @@ Route::prefix('admin')->group(function (){
 
 /*-------------End Admin route--------*/
 
-// Admin Category All Routes 
+// Admin Category All Routes
 
 Route::prefix('category')->group(function(){
 
@@ -86,7 +87,7 @@ Route::prefix('category')->group(function(){
 
 
 
-// all Sub Category 
+// all Sub Category
 
 Route::get('/sub/view', [SubCategoryController::class, 'SubCategoryView'])->name('all.subcategory');
 
@@ -101,7 +102,7 @@ Route::post('/sub/update', [SubCategoryController::class, 'SubCategoryUpdate'])-
 Route::get('/sub/delete/{id}', [SubCategoryController::class, 'SubCategoryDelete'])->name('subcategory.delete');
 
 
-// all child Category 
+// all child Category
 
 Route::get('/child/view', [SubCategoryController::class, 'ChildCategoryView'])->name('all.childcategory');
 
@@ -120,9 +121,9 @@ Route::get('/child/delete/{id}', [SubCategoryController::class, 'ChildCategoryDe
     });
 
 
-    
 
-// Admin Content All Routes 
+
+// Admin Content All Routes
 
 Route::prefix('content')->group(function(){
 
@@ -136,7 +137,7 @@ Route::prefix('content')->group(function(){
 
     Route::post('/data/update', [ContentController::class, 'ContentDataUpdate'])->name('content-update');
 
-    Route::post('/thamble/update', [ContentController::class, 'ThambleImageUpdate'])->name('update-services-thamble');
+    // Route::post('/thamble/update', [ContentController::class, 'ThambleImageUpdate'])->name('update-services-thamble');
 
     Route::get('/inactive/{id}', [ContentController::class, 'ServicesInactive'])->name('services.inactive');
 
@@ -146,7 +147,7 @@ Route::prefix('content')->group(function(){
 
 });
 
-// Admin gallery All Routes 
+// Admin gallery All Routes
 
 Route::prefix('gallery')->group(function(){
 
@@ -168,7 +169,7 @@ Route::prefix('gallery')->group(function(){
 
 });
 
-// Admin Portfolio All Routes 
+// Admin Portfolio All Routes
 
 Route::prefix('portfolio')->group(function(){
 
@@ -192,7 +193,7 @@ Route::prefix('portfolio')->group(function(){
 
 });
 
-// Admin Client All Routes 
+// Admin Client All Routes
 
 Route::prefix('client')->group(function(){
 
@@ -211,7 +212,7 @@ Route::prefix('client')->group(function(){
 });
 
 
-// Frontend Product Details Page url 
+// Frontend Product Details Page url
 Route::get('/services/details/{id}/{slug}', [IndexController::class, 'ServicesDetails']);
 
 // Frontend SubCategory wise Data
@@ -233,6 +234,7 @@ Route::get('contact/us', [ContactUsController::class, 'ContactUs'])->name('conta
 Route::get('all/client', [ContactUsController::class, 'AllClients'])->name('all-clients');
 Route::get('all/portfolios', [ContactUsController::class, 'AllPortfolios'])->name('all-portfolios');
 Route::get('all/services', [ContactUsController::class, 'AllServices'])->name('all-services');
+Route::get('all/creative', [ContactUsController::class, 'AllCreative'])->name('all-creative');
 
 // blog index
 Route::get('all/blog', [ContactUsController::class, 'AllBlog'])->name('all-blog');
@@ -250,7 +252,7 @@ Route::get('digital/marketing', [ContactUsController::class, 'DigitalMarketing']
 //privacy
 Route::get('privacy/view', [ContactUsController::class, 'PrivacyView'])->name('privacy-view');
 Route::get('terms/view', [ContactUsController::class, 'TermsView'])->name('terms-view');
- 
+
 // blog
 Route::get('blog/add', [BlogController::class, 'BlogAdd'])->name('blog-add');
 
@@ -299,7 +301,7 @@ Route::post('terms/update/', [PolicyController::class, 'TermsUpdate'])->name('te
 Route::get('policy/delete/{id}', [PolicyController::class, 'PolicyDelete'])->name('policy-delete');
 
 
-// Admin Client All Routes 
+// Admin Client All Routes
 
 Route::prefix('ind')->group(function(){
 
@@ -319,10 +321,12 @@ Route::prefix('ind')->group(function(){
 });
 
 
-     
+//basic setting
+Route::get('/setting', [basicsettingController::class, 'setting'])->name('add.setting');
+Route::post('/setting/update', [basicsettingController::class, 'settingUpdate'])->name('setting.update');
 
-   
-     
+
+
 
 
 

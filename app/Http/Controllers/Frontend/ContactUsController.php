@@ -19,6 +19,10 @@ class ContactUsController extends Controller
         return view('frontend.contact.all_portfolios');
     } //end
 
+    public function AllCreative(){
+        return view('frontend.contact.all_creative');
+    } //end
+
     public function AllServices(){
         return view('frontend.contact.all_services');
     } //end

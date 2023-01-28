@@ -86,6 +86,11 @@ li {
 ul {
     list-style-type: none;
 }
+.zoom:hover {
+  -ms-transform: scale(1.5); /* IE 9 */
+  -webkit-transform: scale(1.5); /* Safari 3-8 */
+  transform: scale(2); 
+}
 
     </style>
 	

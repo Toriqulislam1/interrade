@@ -13,8 +13,8 @@ Technoval BD
 				<div class="row justify-content-center ">
 					<div class="col-lg-8">
 						<div class="common-heading">
-							<span>Our Work</span>
-							<h2 class="mb20">Our Latest Creative Work</h2>
+							
+							<h2 class="mb20">Our Latest In-House Software</h2>
 						</div>
 					</div>
 				</div>
