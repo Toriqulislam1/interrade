@@ -33,7 +33,7 @@
         #particles-js {
             width: 100%;
             height: 100vh;
-           
+
             background-position: center;
             background-size: cover;
         }
@@ -72,7 +72,7 @@
 }
 
 .topnav li:hover {
-  
+
   color: blue;
 }
 
@@ -89,24 +89,24 @@ ul {
 .zoom:hover {
   -ms-transform: scale(1.5); /* IE 9 */
   -webkit-transform: scale(1.5); /* Safari 3-8 */
-  transform: scale(2); 
+  transform: scale(2);
 }
 
     </style>
-	
+
  </head>
- <body>   
+ <body>
 
 
 
 @include('frontend.body.header')
 
 	  <!--Start Hero Slider-->
-	  
-@yield('content') 
+
+@yield('content')
 
 
-		
+
 @include('frontend.body.footer')
 <!--End Footer-->
 
@@ -118,13 +118,14 @@ ul {
 <!-- js placed at the end of the document so the pages load faster -->
 <script src="{{ asset('frontend/assets/js/vendor/modernizr-3.5.0.min.js')}}"></script>
 <script src="{{ asset('frontend/assets/js/jquery.min.js')}}"></script>
-<script src="{{ asset('frontend/assets/js/bootstrap.bundle.min.js')}}"></script> 
+<script src="{{ asset('frontend/assets/js/bootstrap.bundle.min.js')}}"></script>
 <script src="{{ asset('frontend/assets/js/plugin.min.js')}}"></script>
   <script src="{{ asset('frontend/assets/js/swiper.min.js')}}"></script>
 <script src="{{ asset('frontend/assets/js/preloader.js')}}"></script>
+<script src="{{ asset('frontend/assets/js/tweenmax.min.js')}}"></script>
 <!--common script file-->
 <script src="{{ asset('frontend/assets/js/main.js')}}"></script>
 
- 
+
 </body>
 </html>

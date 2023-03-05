@@ -9,7 +9,7 @@
 		<ul>
 			  <li style="letter-spacing:1px" > <img src="{{ asset('frontend/assets/images/bd.png')}}"></i><strong>&nbsp;{{ $setting->phone }}</strong>
 			</li>
-			<li style="float: right;letter-spacing:0.5px"><marquee><strong>Interread Import & Export service</strong></marquee></li>
+			<li style="float: right;letter-spacing:0.5px"><marquee><strong>Interrade Import & Export service</strong></marquee></li>
 		</ul>
 
 
@@ -44,7 +44,7 @@
 
 
 						@foreach($categories as $category)
-						 {{--  <li class="sbmenu">
+						   <li class="sbmenu">
 							<a href="{{ route('all-services')}}" class="menu-links">{{ $category->category_name}}</a>
 							<div class="nx-dropdown">
 							   <div class="sub-menu-section">
@@ -91,7 +91,7 @@
 								  </div>
 							   </div>
 							</div>
-						 </li>  --}}
+						 </li>  
 
 						 @endforeach
 
@@ -119,7 +119,7 @@
                         </div>
                      </li>  --}}
 
-						 <li class="sbmenu">
+						 {{--  <li class="sbmenu">
 							<a href="{{ route('all-clients')}}" class="menu-links">CLIENTS</a>
 							<div class="nx-dropdown">
 
@@ -134,7 +134,7 @@
 							<a href="{{ route('contact-us')}}" class="menu-links">CONTACT US</a>
 							<div class="nx-dropdown">
 
-						 </li>
+						 </li>  --}}
 						 <!--li class="sbmenu">
 							<a href="{{ route('all-blog')}}" class="menu-links">BLOGS</a>
 							<div class="nx-dropdown">

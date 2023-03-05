@@ -1,4 +1,9 @@
 <!--Start Footer-->
+
+@php
+$setting = App\Models\setting::find(1);
+@endphp
+
 <footer class="dark-footer dg-bg--1 pt60 upset dark-footer-1">
 	<div class="up-curvs"><svg height="100" width="100%" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 				viewBox="0 0 1920 89.3" style="enable-background:new 0 0 1920 89.3;" xml:space="preserve" fill="#111111">
@@ -9,7 +14,7 @@
 <div class="container">
 <div class="row justify-content-between">
 <div class="col-lg-4 col-sm-6  ftr-brand-pp">
-<a class="navbar-brand mb30 mt30" href="#"> <img src="{{ asset('frontend/assets/images/logo.png')}}" alt="Logo" width="100" /></a>
+<a class="navbar-brand mb30 mt30" href="#"> <img src="{{ asset($setting->logo) }}" alt="Logo" width="100" /></a>
 <p>We’re a team of strategists, engineers, analysts, designers and marketers who create transformational digital experiences.</p>
 <div class="ff-social-icons mt30">
 <a href="https://www.facebook.com/technovalbd" target="blank"><i class="fab fa-facebook"></i></a>
@@ -24,15 +29,15 @@
 <ul class="footer-address-list ftr-details">
 <li>
 <span><i class="fas fa-envelope"></i></span>
-<p>Email <span> <a href="mailto:contact@technovalbd.com">contact@technovalbd.com</a></span></p>
+<p>Email <span> <a href="mailto:{{ $setting->email }}">{{ $setting->email }}</a></span></p>
 </li>
 <li>
 <span><i class="fas fa-phone-alt"></i></span>
-<p>Phone <span> <a href="tel:+8802223314131">+8802223314131</a></span></p>
+<p>Phone <span> <a href="tel:{{ $setting->phone }}">{{ $setting->phone }}</a></span></p>
 </li>
 <li>
 <span><i class="fas fa-map-marker-alt"></i></span>
-<p>Address <span> 149/A, Baitush Sharaf Mosjid Complex,Old Airport Road, Monipuripara,Farmgate, Dhaka-1215.</span></p>
+<p>Address <span> {{ $setting->address }}</span></p>
 </li>
 </ul>
 </div>

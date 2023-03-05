@@ -1,113 +1,54 @@
 @extends('frontend.front_master')
 @section('content')
 @section('title')
-brothers-association
+Interrade
 @endsection
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 
-<body>
+<!--Start Hero Slider-->
+<section class="hero-slider hero-style">
+   <div class="swiper-container">
+      <!-- start swiper-wrapper -->
+       <div class="swiper-wrapper">
+          @php
+          $slider = App\Models\slide::orderBy('id','desc')->limit(2)->get();
+          @endphp
 
+          @foreach ($slider as $item )
 
-
-
-{{--  <section class="hero-slider hero-style" >
-	  <div id="particles-js">
-         <div class="swiper-container">
-            <!-- start swiper-wrapper -->
-             <div class="swiper-wrapper">
-                <!--slider 1 start -->
-               <div class="swiper-slide">
-                   <div class="slide-inner slide-bg-image" >
-                      <div class="container">
-                         <div data-swiper-parallax="300" class="slide-title">
-                            <h2>Software Development</h2>
-                         </div>
-                         <div data-swiper-parallax="400" class="slide-text">
-                           <p>Our employee best practice processes and development methodologies as a foundation for rapid building of cutting-edge technology solutions in a structured and methodical way.</p>
-                         </div>
-                         <div class="clearfix"></div>
-
-                      </div>
+         <div class="swiper-slide">
+             <div class="slide-inner slide-bg-image" data-background=" {{ asset($item->slide_photo)}} ">
+                <div class="container">
+                   <div data-swiper-parallax="300" class="slide-title">
+                      <h2>{{ $item->slide_title}}</h2>
                    </div>
-                </div>
-                   <!--slider 1 end -->
-                  <!--slider 2 start -->
-                <div class="swiper-slide">
-                   <div class="slide-inner slide-bg-image" ">
-                      <div class="container">
-                         <div data-swiper-parallax="300" class="slide-title">
-                            <h2>Digital Marketing</h2>
-                         </div>
-                         <div data-swiper-parallax="400" class="slide-text">
-                           <p>The perfect resource for beginner-to-advanced digital marketers looking to learn new skills or hone existing ones</p>
-                         </div>
-                         <div class="clearfix"></div>
-
-                      </div>
+                   <div data-swiper-parallax="400" class="slide-text">
+                      <p>{!! Str::limit($item->slide_description, 50)  !!}</p>
                    </div>
+                   <div class="clearfix"></div>
                 </div>
-                   <!--slider 2 end -->
-				<!--slider 3 start -->
-                <div class="swiper-slide">
-                   <div class="slide-inner slide-bg-image">
-                      <div class="container">
-                         <div data-swiper-parallax="300" class="slide-title">
-                            <h2>Website Design & Development</h2>
-                         </div>
-                         <div data-swiper-parallax="400" class="slide-text">
-                           <p>Our web experiences are high-performing, feature-packed and digitally transformative, designed to be user-friendly, fully functional, very secure and able to scale as your enterprise grows. </p>
-                         </div>
-                         <div class="clearfix"></div>
-
-                      </div>
-                   </div>
-                </div>
-                   <!--slider 3 end -->
-
              </div>
-             <!-- end swiper-wrapper -->
-             <!-- swipper controls -->
-             <div class="swiper-pagination"></div>
-             <div class="swiper-button-next"></div>
-             <div class="swiper-button-prev"></div>
-              <!-- swipper controls -->
           </div>
-		     </div>
-      </section>  --}}
+          @endforeach
+
+       </div>
+       <!-- end swiper-wrapper -->
+       <!-- swipper controls -->
+       <div class="swiper-pagination"></div>
+       <div class="swiper-button-next"></div>
+       <div class="swiper-button-prev"></div>
+        <!-- swipper controls -->
+    </div>
+</section>
+
+<!--End Hero Slider-->
 
 
-
-      	<!--Start Hero-->
-	<section class="hero-section business-startup" id="home">
-		<div class="text-block">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-6 v-center">
-						<div class="header-heading">
-							<h1 class="wow fadeInUp" data-wow-delay=".2s">We Build Scalable & Smart Solution</h1>
-							<p class="wow fadeInUp" data-wow-delay=".4s">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse faucibus, risus sit amet auctor sodales, justo erat tempor eros.</p>
-							<a href="#" class="btn-main bg-btn3 lnk wow fadeInUp" data-wow-delay=".6s">GET STARTED<i class="fas fa-chevron-right fa-icon"></i><span class="circle"></span></a>
-						</div>
-					</div>
-					<div class="col-lg-6 v-center">
-						<div class="hero-photo"><img src="{{ asset('frontend/assets/images/hero/1.jpeg') }}" alt="img"></div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!--End Hero-->
-
-      <!--End Hero Slider-->
-
-
-		<!--End Hero-->
-
-		@php
-$clients = App\Models\Client::orderBy('id','desc')->get();
-@endphp
+        @php
+        $clients = App\Models\Client::orderBy('id','desc')->get();
+        @endphp
 	<div class="container">
 
 		<div class="weworkfor pt20 pb20 dark-bg2">
@@ -127,7 +68,7 @@ $clients = App\Models\Client::orderBy('id','desc')->get();
 
 
 	<!--Start Service-->
-	<section class="dg-service2 pb120 pt0" id="services">
+	  <section class="dg-service2 pb120 pt0" id="services">
 		<div class="container">
 		<div class="row justify-content-center">
 							<div class="col-lg-6">
@@ -169,8 +110,60 @@ $clients = App\Models\Client::orderBy('id','desc')->get();
 
 
 	<!--End Service-->
+
+    {{--  catagory_product  --}}
+
+    	@php
+		$category = App\Models\category::orderBy('id','desc')->limit(4)->get();;
+		@endphp
+ <section class="dg-service2 pb120 pt0" id="services">
+		<div class="container">
+        @foreach ($category  as $category  )
+		<div class="row justify-content-center">
+							<div class="col-lg-6">
+								<div class="common-heading ptag">
+
+									<h2>{{ $category->category_name }}</h2>
+
+								</div>
+							</div>
+						</div>
+			<div class="row upset ">
+
+			@php
+		$services = App\Models\Services::where('category_id',$category->id)->limit(4)->get();
+		@endphp
+
+			@foreach($services as $item)
+				<div class="col-lg-3 col-sm-6 mt30 wow fadeInUp" data-wow-delay=".6s">
+					<div class="s-block up-hor pt20">
+						<div class="nn-card-set">
+						<a href="{{ url('services/details/'.$item->id.'/'.$item->content_title ) }}">
+							<div class="card-icon"><img src="{{ asset($item->thamble) }}" alt="service" class="img-fluid" /></div>
+							<h6>{{ $item->content_title}}</h6>
+
+							Learn More <i class="fas fa-chevron-right fa-icon"></i></a>
+						</div>
+					</div>
+				</div>
+				@endforeach
+
+			</div>
+            @endforeach
+		</div>
+		<div class="row">
+        <div class="col-lg-12 maga-btn mt60">
+          <a href="{{route('all-services')}}" class="btn-outline">View More Services<i class="fas fa-chevron-right fa-icon"></i></a>
+        </div>
+      </div>
+	</section>
+
+
+
+    {{-- end catagory_product  --}}
+
 	<!--Start gallery -->
-<section class="dg-portfolio-section pb120 pt120">
+{{--  <section class="dg-portfolio-section pb120 pt120">
 <div class="container">
 <div class="row justify-content-center ">
 <div class="col-lg-8">
@@ -209,10 +202,10 @@ $gallery = App\Models\Gallery::orderBy('id','desc')->limit(12)->get();
           <a href="{{ route('all-creative')}}" class="btn-outline">View More Photos<i class="fas fa-chevron-right fa-icon"></i></a>
         </div>
       </div>
-</section>
+</section>  --}}
 <!--End gallery-->
 	<!--why choose-->
-		<section class="why-choos-lg pad-tb deep-dark">
+		{{--  <section class="why-choos-lg pad-tb deep-dark">
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-6">
@@ -259,7 +252,7 @@ $gallery = App\Models\Gallery::orderBy('id','desc')->limit(12)->get();
 					</div>
 				</div>
 			</div>
-		</section>
+		</section>  --}}
 		<!--End why choose-->
 
 		<!--About Us-->
@@ -308,7 +301,7 @@ c237.6-5.7,475.3-3.1,712.7,7.7c164.2,7.5,328.1,23.7,492.3,31c0.7,0,15.2,0.5,15.2
 
 
 <!--Start Portfolio-->
-		<section class="portfolio-section pad-tb" id="work">
+		{{--  <section class="portfolio-section pad-tb" id="work">
 			<div class="container">
 				<div class="row justify-content-center ">
 					<div class="col-lg-8">
@@ -343,13 +336,13 @@ $portfolios = App\Models\Portfolio::orderBy('id','desc')->get();
 
 				</div>
 			</div>
-		</section>
+		</section>  --}}
 		<!--End Portfolio-->
 
 
 
 		<!--Start work-category-->
-		<section class="work-category pad-tb">
+		{{--  <section class="work-category pad-tb">
 			<div class="container">
 				<div class="row justify-content-center">
 					<div class="col-lg-8">
@@ -374,7 +367,7 @@ $portfolios = App\Models\Portfolio::orderBy('id','desc')->get();
 					<div class="col-lg-3 col-sm-6 col-6 wow fadeIn" data-wow-delay="2.1s"> <div class="industry-workfor hoshd"><img src="{{ asset('frontend/assets/images/icons/mobile-app.svg')}}" alt="img"> <h6>On-Demand</h6> </div></div>
 					<div class="col-lg-3 col-sm-6 col-6 wow fadeIn" data-wow-delay="2.3s"> <div class="industry-workfor hoshd"><img src="{{ asset('frontend/assets/images/icons/groceries.svg')}}" alt="img"> <h6>Grocery</h6> </div></div></div>
 				</div>
-			</section>
+			</section>  --}}
 
 			<!--End  work-category-->
 
